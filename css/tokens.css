@@ -1,0 +1,347 @@
+/**
+ * @file tokens.css
+ * @description Design tokens globais do projeto FinCalc.
+ *              Este arquivo é a única fonte de verdade para cores,
+ *              tipografia, espaçamentos, bordas, sombras e animações.
+ *              NUNCA use valores hardcoded em outros arquivos CSS.
+ *              SEMPRE referencie as variáveis deste arquivo.
+ */
+
+/* ============================================================
+   TOKENS GLOBAIS — :root
+   Disponíveis em toda a árvore do documento
+   ============================================================ */
+
+:root {
+
+  /* ----------------------------------------------------------
+     CORES — FUNDOS
+     Escala de profundidade: primary é o mais escuro (fundo geral),
+     surface é o mais claro (cards elevados).
+     ---------------------------------------------------------- */
+  --color-bg-primary:    #0a0e1a; /* fundo geral da página */
+  --color-bg-secondary:  #0f1525; /* fundo de seções alternadas */
+  --color-bg-card:       #1a2236; /* fundo de cards e painéis */
+  --color-bg-card-hover: #1e2840; /* estado hover de cards clicáveis */
+  --color-bg-surface:    #243050; /* superfícies elevadas (tooltips, dropdowns) */
+  --color-bg-input:      #111827; /* fundo dos campos de input */
+  --color-bg-input-focus:#0f1e35; /* fundo do input em foco */
+  --color-bg-overlay:    rgba(0, 0, 0, 0.7); /* overlay de modais */
+
+  /* ----------------------------------------------------------
+     CORES — BORDAS
+     ---------------------------------------------------------- */
+  --color-border:        #1e2d47; /* borda padrão — sutil */
+  --color-border-light:  #253655; /* borda levemente mais visível */
+  --color-border-focus:  #3b82f6; /* borda de input em foco (accent) */
+  --color-border-error:  #ef4444; /* borda de input com erro */
+
+  /* ----------------------------------------------------------
+     CORES — TEXTO
+     ---------------------------------------------------------- */
+  --color-text-primary:   #f0f4ff; /* texto principal — quase branco */
+  --color-text-secondary: #8899b4; /* texto secundário — cinza-azulado */
+  --color-text-muted:     #4d6080; /* texto desabilitado / placeholder */
+  --color-text-inverse:   #0a0e1a; /* texto sobre fundo claro (botões accent) */
+  --color-text-link:      #60a5fa; /* links */
+  --color-text-link-hover:#93c5fd; /* links em hover */
+
+  /* ----------------------------------------------------------
+     CORES — ACCENT (ação principal)
+     ---------------------------------------------------------- */
+  --color-accent:         #3b82f6; /* azul primário */
+  --color-accent-hover:   #2563eb; /* azul primário — hover */
+  --color-accent-active:  #1d4ed8; /* azul primário — active/pressed */
+  --color-accent-subtle:  rgba(59, 130, 246, 0.12); /* fundo sutil accent */
+  --color-accent-glow:    rgba(59, 130, 246, 0.25); /* brilho/glow accent */
+
+  /* ----------------------------------------------------------
+     CORES — SEMÂNTICAS
+     ---------------------------------------------------------- */
+  --color-success:        #10b981; /* verde — resultado positivo */
+  --color-success-hover:  #059669;
+  --color-success-subtle: rgba(16, 185, 129, 0.12);
+
+  --color-warning:        #f59e0b; /* âmbar — atenção */
+  --color-warning-hover:  #d97706;
+  --color-warning-subtle: rgba(245, 158, 11, 0.12);
+
+  --color-danger:         #ef4444; /* vermelho — erro / risco */
+  --color-danger-hover:   #dc2626;
+  --color-danger-subtle:  rgba(239, 68, 68, 0.12);
+
+  --color-info:           #06b6d4; /* ciano — informação neutra */
+  --color-info-subtle:    rgba(6, 182, 212, 0.12);
+
+  /* ----------------------------------------------------------
+     GRADIENTES
+     ---------------------------------------------------------- */
+  --gradient-hero:        linear-gradient(135deg, #0a0e1a 0%, #0f1f3d 100%);
+  --gradient-card:        linear-gradient(135deg, #1a2236 0%, #1e2840 100%);
+  --gradient-accent:      linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+  --gradient-success:     linear-gradient(135deg, #10b981 0%, #059669 100%);
+  --gradient-header:      linear-gradient(180deg, #0a0e1a 0%, rgba(10,14,26,0.95) 100%);
+
+  /* ----------------------------------------------------------
+     TIPOGRAFIA — FAMÍLIAS
+     Inter: corpo, UI, inputs — legibilidade em telas
+     JetBrains Mono: valores numéricos de resultado — clareza
+     ---------------------------------------------------------- */
+  --font-primary: 'Inter', system-ui, -apple-system, BlinkMacSystemFont,
+                  'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+  --font-mono:    'JetBrains Mono', 'Fira Code', 'Cascadia Code',
+                  'Courier New', Courier, monospace;
+
+  /* ----------------------------------------------------------
+     TIPOGRAFIA — TAMANHOS (escala modular)
+     Base: 16px (1rem). Não usar px para font-size.
+     ---------------------------------------------------------- */
+  --font-size-xs:   0.75rem;   /*  12px — labels de helper text */
+  --font-size-sm:   0.875rem;  /*  14px — labels, badges, secundário */
+  --font-size-base: 1rem;      /*  16px — corpo padrão */
+  --font-size-md:   1.125rem;  /*  18px — corpo enfatizado */
+  --font-size-lg:   1.25rem;   /*  20px — subtítulos */
+  --font-size-xl:   1.5rem;    /*  24px — h3, resultados intermediários */
+  --font-size-2xl:  2rem;      /*  32px — h2, resultados principais */
+  --font-size-3xl:  2.5rem;    /*  40px — h1, resultado destaque */
+  --font-size-4xl:  3rem;      /*  48px — hero headline */
+  --font-size-5xl:  3.75rem;   /*  60px — hero super display */
+
+  /* ----------------------------------------------------------
+     TIPOGRAFIA — PESOS
+     ---------------------------------------------------------- */
+  --font-weight-regular:   400;
+  --font-weight-medium:    500;
+  --font-weight-semibold:  600;
+  --font-weight-bold:      700;
+  --font-weight-extrabold: 800;
+
+  /* ----------------------------------------------------------
+     TIPOGRAFIA — LINE-HEIGHT
+     ---------------------------------------------------------- */
+  --line-height-tight:  1.2;  /* headings grandes */
+  --line-height-snug:   1.4;  /* headings médios */
+  --line-height-base:   1.6;  /* corpo de texto */
+  --line-height-relaxed:1.8;  /* parágrafos de blog (leitura longa) */
+
+  /* ----------------------------------------------------------
+     TIPOGRAFIA — LETTER-SPACING
+     ---------------------------------------------------------- */
+  --letter-spacing-tight:  -0.02em; /* headings grandes */
+  --letter-spacing-normal:  0em;
+  --letter-spacing-wide:    0.05em;  /* labels uppercase */
+  --letter-spacing-wider:   0.1em;   /* badges, tags */
+
+  /* ----------------------------------------------------------
+     ESPAÇAMENTOS (escala 4px — múltiplos de 0.25rem)
+     Usar sempre estas variáveis para margin, padding, gap.
+     ---------------------------------------------------------- */
+  --space-px:  1px;
+  --space-0:   0;
+  --space-1:   0.25rem;  /*  4px */
+  --space-2:   0.5rem;   /*  8px */
+  --space-3:   0.75rem;  /* 12px */
+  --space-4:   1rem;     /* 16px */
+  --space-5:   1.25rem;  /* 20px */
+  --space-6:   1.5rem;   /* 24px */
+  --space-7:   1.75rem;  /* 28px */
+  --space-8:   2rem;     /* 32px */
+  --space-10:  2.5rem;   /* 40px */
+  --space-12:  3rem;     /* 48px */
+  --space-14:  3.5rem;   /* 56px */
+  --space-16:  4rem;     /* 64px */
+  --space-20:  5rem;     /* 80px */
+  --space-24:  6rem;     /* 96px */
+  --space-32:  8rem;     /* 128px */
+
+  /* ----------------------------------------------------------
+     LAYOUT — LARGURAS DE CONTAINER
+     ---------------------------------------------------------- */
+  --container-xs:  480px;
+  --container-sm:  640px;
+  --container-md:  768px;
+  --container-lg: 1024px;
+  --container-xl: 1280px;
+  --container-2xl:1536px;
+
+  /* ----------------------------------------------------------
+     BORDAS — RAIO (border-radius)
+     ---------------------------------------------------------- */
+  --radius-none: 0;
+  --radius-xs:   4px;
+  --radius-sm:   6px;
+  --radius-md:   12px;
+  --radius-lg:   16px;
+  --radius-xl:   24px;
+  --radius-2xl:  32px;
+  --radius-full: 9999px; /* pílulas / avatares circulares */
+
+  /* ----------------------------------------------------------
+     BORDAS — ESPESSURA
+     ---------------------------------------------------------- */
+  --border-width-thin:   1px;
+  --border-width-base:   1px;
+  --border-width-thick:  2px;
+
+  /* ----------------------------------------------------------
+     SOMBRAS
+     Escala de elevação: quanto maior o número, mais elevado.
+     ---------------------------------------------------------- */
+  --shadow-none:  none;
+  --shadow-xs:    0 1px 3px rgba(0, 0, 0, 0.3);
+  --shadow-sm:    0 2px 8px rgba(0, 0, 0, 0.35);
+  --shadow-md:    0 4px 16px rgba(0, 0, 0, 0.4);
+  --shadow-lg:    0 8px 32px rgba(0, 0, 0, 0.45);
+  --shadow-xl:    0 16px 48px rgba(0, 0, 0, 0.5);
+  --shadow-card:  0 4px 24px rgba(0, 0, 0, 0.4);
+
+  /* Glow — brilho colorido para elementos de destaque */
+  --shadow-glow-accent:  0 0 24px rgba(59, 130, 246, 0.2);
+  --shadow-glow-success: 0 0 24px rgba(16, 185, 129, 0.2);
+  --shadow-glow-warning: 0 0 24px rgba(245, 158, 11, 0.2);
+
+  /* ----------------------------------------------------------
+     TRANSIÇÕES — DURAÇÃO
+     ---------------------------------------------------------- */
+  --duration-instant: 50ms;
+  --duration-fast:    150ms;
+  --duration-base:    250ms;
+  --duration-slow:    400ms;
+  --duration-slower:  600ms;
+
+  /* ----------------------------------------------------------
+     TRANSIÇÕES — EASING
+     ---------------------------------------------------------- */
+  --ease-linear:    linear;
+  --ease-in:        cubic-bezier(0.4, 0, 1, 1);
+  --ease-out:       cubic-bezier(0, 0, 0.2, 1);
+  --ease-in-out:    cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-bounce:    cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  /* Atalhos de transição (duração + easing combinados) */
+  --transition-fast:   var(--duration-fast)   var(--ease-out);
+  --transition-base:   var(--duration-base)   var(--ease-out);
+  --transition-slow:   var(--duration-slow)   var(--ease-out);
+  --transition-bounce: var(--duration-base)   var(--ease-bounce);
+
+  /* ----------------------------------------------------------
+     Z-INDEX — CAMADAS DE EMPILHAMENTO
+     Valores pré-definidos para evitar z-index arbitrários.
+     ---------------------------------------------------------- */
+  --z-below:      -1;
+  --z-base:        0;
+  --z-raised:     10;  /* cards elevados */
+  --z-dropdown:   100; /* menus dropdown */
+  --z-sticky:     200; /* header sticky */
+  --z-overlay:    300; /* overlay de modal */
+  --z-modal:      400; /* modal em si */
+  --z-toast:      500; /* notificações toast */
+  --z-tooltip:    600; /* tooltips */
+
+  /* ----------------------------------------------------------
+     BREAKPOINTS — REFERÊNCIA (uso apenas em media queries)
+     Não usar como valores CSS diretos.
+     Breakpoints: 480, 640, 768, 1024, 1280, 1536
+     ---------------------------------------------------------- */
+
+  /* ----------------------------------------------------------
+     COMPONENTES — TOKENS ESPECÍFICOS
+     Valores derivados dos tokens base acima.
+     ---------------------------------------------------------- */
+
+  /* Header */
+  --header-height:        64px;
+  --header-height-mobile: 56px;
+  --header-bg:            rgba(10, 14, 26, 0.92);
+  --header-backdrop:      blur(12px) saturate(180%);
+  --header-border:        var(--color-border);
+
+  /* Input */
+  --input-height:         48px;
+  --input-height-sm:      40px;
+  --input-height-lg:      56px;
+  --input-padding-x:      var(--space-4);
+  --input-padding-y:      var(--space-3);
+  --input-font-size:      var(--font-size-base);
+  --input-border-radius:  var(--radius-sm);
+  --input-border-color:   var(--color-border-light);
+  --input-bg:             var(--color-bg-input);
+  --input-text-color:     var(--color-text-primary);
+  --input-placeholder:    var(--color-text-muted);
+  --input-focus-border:   var(--color-border-focus);
+  --input-focus-shadow:   0 0 0 3px var(--color-accent-subtle);
+  --input-error-border:   var(--color-border-error);
+  --input-error-shadow:   0 0 0 3px var(--color-danger-subtle);
+
+  /* Botão primário */
+  --btn-height:           48px;
+  --btn-height-sm:        36px;
+  --btn-height-lg:        56px;
+  --btn-padding-x:        var(--space-6);
+  --btn-font-size:        var(--font-size-base);
+  --btn-font-weight:      var(--font-weight-semibold);
+  --btn-border-radius:    var(--radius-sm);
+  --btn-transition:       var(--transition-fast);
+
+  /* Card */
+  --card-padding:         var(--space-6);
+  --card-padding-mobile:  var(--space-4);
+  --card-border-radius:   var(--radius-md);
+  --card-bg:              var(--color-bg-card);
+  --card-border:          var(--color-border);
+  --card-shadow:          var(--shadow-card);
+
+  /* Badge */
+  --badge-padding-x:      var(--space-3);
+  --badge-padding-y:      var(--space-1);
+  --badge-font-size:      var(--font-size-xs);
+  --badge-font-weight:    var(--font-weight-semibold);
+  --badge-border-radius:  var(--radius-full);
+  --badge-letter-spacing: var(--letter-spacing-wider);
+
+  /* Resultado numérico (calculadoras) */
+  --result-font-family:   var(--font-mono);
+  --result-font-size-lg:  var(--font-size-3xl);
+  --result-font-size-md:  var(--font-size-2xl);
+  --result-font-size-sm:  var(--font-size-xl);
+  --result-color:         var(--color-text-primary);
+  --result-accent-color:  var(--color-success);
+
+  /* AdSense slots — altura reservada para evitar CLS */
+  --ad-slot-height-banner:   90px;
+  --ad-slot-height-rect:    250px;
+  --ad-slot-height-half:    600px;
+
+}
+
+/* ============================================================
+   ACESSIBILIDADE — MOTION REDUCED
+   Remove animações para usuários que preferem menos movimento
+   ============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --duration-instant: 0ms;
+    --duration-fast:    0ms;
+    --duration-base:    0ms;
+    --duration-slow:    0ms;
+    --duration-slower:  0ms;
+    --transition-fast:   0ms var(--ease-out);
+    --transition-base:   0ms var(--ease-out);
+    --transition-slow:   0ms var(--ease-out);
+    --transition-bounce: 0ms var(--ease-bounce);
+  }
+}
+
+/* ============================================================
+   MODO DE ALTO CONTRASTE (acessibilidade Windows)
+   ============================================================ */
+
+@media (forced-colors: active) {
+  :root {
+    --color-accent:       Highlight;
+    --color-text-primary: CanvasText;
+    --color-bg-primary:   Canvas;
+    --color-border:       ButtonBorder;
+  }
+}
