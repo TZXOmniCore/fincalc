@@ -1,0 +1,586 @@
+/**
+ * @file reset.css
+ * @description Normalização cross-browser do projeto FinCalc.
+ *              Remove inconsistências entre navegadores e estabelece
+ *              uma base previsível antes de qualquer estilo ser aplicado.
+ *              Baseado em: modern-normalize + opinionated resets.
+ *
+ * ORDEM DE IMPORTAÇÃO:
+ *   1. tokens.css   ← já deve existir
+ *   2. reset.css    ← este arquivo
+ *   3. base.css     ← próximo arquivo
+ */
+
+/* ============================================================
+   BOX MODEL — UNIVERSAL
+   Garante que padding e border sejam incluídos na largura total.
+   Sem este reset, layout cálculos nunca batem.
+   ============================================================ */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ============================================================
+   DOCUMENTO RAIZ
+   ============================================================ */
+
+html {
+  /* Tamanho de fonte base — 16px em todos os navegadores */
+  font-size: 100%;
+
+  /* Melhora renderização de texto em Webkit (macOS/iOS) */
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+
+  /* Scroll suave para âncoras internas */
+  scroll-behavior: smooth;
+
+  /* Altura mínima para que footer fique no rodapé */
+  min-height: 100%;
+
+  /* Tab size consistente para código */
+  tab-size: 4;
+  -moz-tab-size: 4;
+}
+
+/* Respeita preferência do usuário por menos movimento */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* ============================================================
+   BODY
+   ============================================================ */
+
+body {
+  /* Herda font-size do html (rem funciona corretamente) */
+  font-size: var(--font-size-base);
+  font-family: var(--font-primary);
+  line-height: var(--line-height-base);
+  color: var(--color-text-primary);
+  background-color: var(--color-bg-primary);
+
+  /* Antialiasing — texto mais nítido em telas de alta densidade */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-smooth: always;
+
+  /* Quebra de linha inteligente — evita overflow em textos longos */
+  overflow-wrap: break-word;
+  word-break: break-word;
+
+  /* Altura mínima full viewport */
+  min-height: 100vh;
+
+  /* Previne scroll horizontal acidental */
+  overflow-x: hidden;
+}
+
+/* ============================================================
+   TIPOGRAFIA — HEADINGS
+   ============================================================ */
+
+h1, h2, h3, h4, h5, h6 {
+  /* Remove negrito padrão do browser — definido via tokens no base.css */
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-tight);
+  color: var(--color-text-primary);
+
+  /* Quebra de texto longo em headings */
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+
+/* ============================================================
+   TIPOGRAFIA — TEXTO
+   ============================================================ */
+
+p {
+  line-height: var(--line-height-base);
+}
+
+/* Remove itálico padrão dos browsers em alguns elementos */
+address,
+cite,
+dfn,
+em,
+var {
+  font-style: normal;
+}
+
+/* Código inline */
+code,
+kbd,
+samp,
+pre {
+  font-family: var(--font-mono);
+  font-size: var(--font-size-sm);
+}
+
+pre {
+  overflow: auto;
+  white-space: pre-wrap;
+}
+
+/* Links */
+a {
+  color: var(--color-text-link);
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  text-underline-offset: 3px;
+  transition: color var(--transition-fast),
+              text-decoration-color var(--transition-fast);
+}
+
+a:hover {
+  color: var(--color-text-link-hover);
+  text-decoration-color: currentColor;
+}
+
+/* Remove sublinhado de links que são botões ou componentes de UI */
+a:not([href]) {
+  color: inherit;
+  text-decoration: none;
+  cursor: default;
+}
+
+/* ============================================================
+   LISTAS
+   ============================================================ */
+
+ul,
+ol {
+  list-style: none;
+}
+
+/* Listas dentro de conteúdo editorial (blog) mantêm bullets */
+.prose ul {
+  list-style: disc;
+  padding-left: var(--space-6);
+}
+
+.prose ol {
+  list-style: decimal;
+  padding-left: var(--space-6);
+}
+
+.prose li {
+  line-height: var(--line-height-relaxed);
+}
+
+.prose li + li {
+  margin-top: var(--space-2);
+}
+
+/* ============================================================
+   IMAGENS E MÍDIA
+   ============================================================ */
+
+img,
+picture,
+video,
+canvas,
+svg {
+  /* Imagens responsivas por padrão */
+  display: block;
+  max-width: 100%;
+
+  /* Remove espaço extra embaixo (baseline alignment) */
+  vertical-align: middle;
+}
+
+img {
+  /* Garante que alt text seja legível quando imagem falha */
+  font-style: italic;
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+
+  /* Interpolação de alta qualidade */
+  image-rendering: -webkit-optimize-contrast;
+}
+
+svg {
+  /* SVG herda cor do texto pai */
+  fill: currentColor;
+
+  /* Evita que SVG inline ultrapasse o container */
+  overflow: hidden;
+}
+
+/* ============================================================
+   FORMULÁRIOS
+   ============================================================ */
+
+/* Remove estilos padrão inconsistentes entre browsers */
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit;
+  font-size: 100%;
+  font-weight: inherit;
+  line-height: inherit;
+  color: inherit;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+/* Botões */
+button {
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  white-space: nowrap;
+  user-select: none;
+  -webkit-user-select: none;
+  border-radius: 0;
+  overflow: visible;
+  text-transform: none;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+/* Remove outline padrão do browser — REPLICADO com focus-visible */
+button:focus,
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+}
+
+/* Focus ring acessível — apenas para navegação por teclado */
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+a:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+  border-radius: var(--radius-xs);
+}
+
+/* Inputs de texto */
+input[type="text"],
+input[type="number"],
+input[type="email"],
+input[type="tel"],
+input[type="url"],
+input[type="search"],
+textarea,
+select {
+  width: 100%;
+  display: block;
+}
+
+/* Remove spinner do input number no Chrome/Safari */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Remove spinner do input number no Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+/* Remove X do input search no IE/Edge */
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/* Remove seta padrão do select */
+select {
+  background-image: none;
+}
+
+/* Textarea não redimensionável horizontalmente */
+textarea {
+  resize: vertical;
+  overflow: auto;
+}
+
+/* Checkbox e radio — tamanho consistente */
+input[type="checkbox"],
+input[type="radio"] {
+  width: 1rem;
+  height: 1rem;
+  flex-shrink: 0;
+  cursor: pointer;
+  appearance: auto;
+  -webkit-appearance: auto;
+}
+
+/* Fieldset */
+fieldset {
+  border: none;
+  padding: 0;
+  margin: 0;
+  min-width: 0;
+}
+
+legend {
+  display: block;
+  width: 100%;
+  padding: 0;
+  margin-bottom: var(--space-2);
+  font-weight: var(--font-weight-semibold);
+}
+
+/* Label */
+label {
+  display: block;
+  cursor: pointer;
+}
+
+/* ============================================================
+   TABELAS
+   ============================================================ */
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+}
+
+th {
+  font-weight: var(--font-weight-semibold);
+  text-align: left;
+}
+
+th,
+td {
+  vertical-align: middle;
+}
+
+/* ============================================================
+   ELEMENTOS INTERATIVOS E ACESSIBILIDADE
+   ============================================================ */
+
+/* Cursor pointer em elementos que implicitamente são clicáveis */
+[role="button"],
+[role="link"],
+summary {
+  cursor: pointer;
+}
+
+/* Remove decoração de lista em elementos com role="list" */
+[role="list"] {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Details/Summary */
+details > summary {
+  list-style: none;
+}
+
+details > summary::-webkit-details-marker {
+  display: none;
+}
+
+/* Dialog nativo */
+dialog {
+  padding: 0;
+  border: none;
+  background: transparent;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+/* ============================================================
+   UTILITÁRIOS DE ACESSIBILIDADE
+   ============================================================ */
+
+/**
+ * .sr-only — visualmente oculto mas acessível para leitores de tela.
+ * Usar em: labels descritivos, ícones sem texto, anúncios aria-live.
+ */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/**
+ * .not-sr-only — reverte .sr-only (útil com estados responsivos)
+ */
+.not-sr-only {
+  position: static;
+  width: auto;
+  height: auto;
+  padding: 0;
+  margin: 0;
+  overflow: visible;
+  clip: auto;
+  white-space: normal;
+}
+
+/* ============================================================
+   SKIP LINK — ACESSIBILIDADE POR TECLADO
+   Primeiro elemento focável da página.
+   Visível apenas quando em foco (usuários de teclado/leitor de tela).
+   ============================================================ */
+
+.skip-link {
+  position: absolute;
+  top: var(--space-4);
+  left: var(--space-4);
+  z-index: var(--z-tooltip);
+  padding: var(--space-2) var(--space-4);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-inverse);
+  background-color: var(--color-accent);
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+
+  /* Oculto por padrão */
+  transform: translateY(calc(-100% - var(--space-8)));
+  transition: transform var(--transition-fast);
+}
+
+.skip-link:focus-visible {
+  transform: translateY(0);
+}
+
+/* ============================================================
+   SCROLLBAR — ESTILIZAÇÃO WEBKIT
+   Mantém a identidade visual dark no scrollbar.
+   ============================================================ */
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-border-light);
+  border-radius: var(--radius-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-text-muted);
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-border-light) var(--color-bg-secondary);
+}
+
+/* ============================================================
+   SELEÇÃO DE TEXTO
+   ============================================================ */
+
+::selection {
+  background-color: var(--color-accent-subtle);
+  color: var(--color-text-primary);
+}
+
+::-moz-selection {
+  background-color: var(--color-accent-subtle);
+  color: var(--color-text-primary);
+}
+
+/* ============================================================
+   PLACEHOLDER
+   ============================================================ */
+
+::placeholder {
+  color: var(--color-text-muted);
+  opacity: 1; /* Firefox reduz opacidade por padrão */
+}
+
+::-webkit-input-placeholder {
+  color: var(--color-text-muted);
+}
+
+/* ============================================================
+   PRINT — ESTILOS BÁSICOS DE IMPRESSÃO
+   ============================================================ */
+
+@media print {
+  *,
+  *::before,
+  *::after {
+    background: transparent !important;
+    color: #000 !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
+
+  a[href]::after {
+    content: " (" attr(href) ")";
+  }
+
+  abbr[title]::after {
+    content: " (" attr(title) ")";
+  }
+
+  pre {
+    white-space: pre-wrap !important;
+  }
+
+  pre,
+  blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+
+  thead {
+    display: table-header-group;
+  }
+
+  tr,
+  img {
+    page-break-inside: avoid;
+  }
+
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+}
