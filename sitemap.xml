@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ================================================================
+  sitemap.xml — FinCalc
+  Mapa do site para mecanismos de busca.
+
+  INSTRUÇÕES DE MANUTENÇÃO:
+  - Adicionar nova página: copiar um bloco <url> e ajustar os campos
+  - Atualizar <lastmod> sempre que a página for modificada
+  - Formato de data: AAAA-MM-DD (ISO 8601)
+  - Após publicar alterações, resubmeter no Google Search Console
+
+  PRIORIDADES (0.0 a 1.0):
+  1.0 → Home (mais importante)
+  0.9 → Calculadoras principais
+  0.8 → Calculadoras secundárias
+  0.7 → Artigos de blog importantes
+  0.6 → Artigos de blog gerais
+  0.3 → Páginas legais (privacidade, termos)
+
+  CHANGEFREQ:
+  daily   → conteúdo atualizado todo dia
+  weekly  → calculadoras (podem receber melhorias)
+  monthly → artigos de blog (conteúdo estável)
+  yearly  → páginas legais
+
+  ⚠️ Substituir "seudominio.com.br" pelo domínio real antes de publicar.
+  ================================================================
+-->
+<urlset
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml"
+>
+
+  <!-- ============================================================
+       PÁGINA INICIAL
+       ============================================================ -->
+
+  <url>
+    <loc>https://seudominio.com.br/</loc>
+    <lastmod>2025-05-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- ============================================================
+       CALCULADORAS — PRIORIDADE MÁXIMA
+       São o produto principal do site.
+       ============================================================ -->
+
+  <url>
+    <loc>https://seudominio.com.br/financiamento/</loc>
+    <lastmod>2025-05-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://seudominio.com.br/consorcio/</loc>
+    <lastmod>2025-05-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://seudominio.com.br/juros-compostos/</loc>
+    <lastmod>2025-05-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://seudominio.com.br/amortizacao/</loc>
+    <lastmod>2025-05-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://seudominio.com.br/cet/</loc>
+    <lastmod>2025-05-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://seudominio.com.br/refinanciamento/</loc>
+    <lastmod>2025-05-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- ============================================================
+       BLOG — LISTAGEM
+       ============================================================ -->
+
+  <url>
+    <loc>https://seudominio.com.br/blog/</loc>
+    <lastmod>2025-05-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- ============================================================
+       BLOG — ARTIGOS
+       Adicionar um bloco <url> para cada novo artigo publicado.
+       ============================================================ -->
+
+  <url>
+    <loc>https://seudominio.com.br/blog/financiamento-vs-consorcio/</loc>
+    <lastmod>2025-01-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://seudominio.com.br/blog/tabela-price-vs-sac/</loc>
+    <lastmod>2025-01-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://seudominio.com.br/blog/como-usar-fgts/</loc>
+    <lastmod>2025-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://seudominio.com.br/blog/o-que-e-cet/</loc>
+    <lastmod>2025-02-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://seudominio.com.br/blog/taxa-selic-e-financiamento/</loc>
+    <lastmod>2025-02-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- ============================================================
+       PÁGINAS LEGAIS
+       ============================================================ -->
+
+  <url>
+    <loc>https://seudominio.com.br/privacidade/</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+  <url>
+    <loc>https://seudominio.com.br/termos/</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+</urlset>
