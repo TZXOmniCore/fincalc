@@ -1,0 +1,1005 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <!-- =====================================================
+       META ESSENCIAL
+       ===================================================== -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <!-- =====================================================
+       SEO — TÍTULO E DESCRIÇÃO
+       ===================================================== -->
+  <title>FinCalc — Calculadoras Financeiras Grátis para Financiamento e Consórcio</title>
+  <meta name="description" content="Simule financiamentos, consórcios, juros compostos e amortizações com calculadoras rápidas e gratuitas. Resultados precisos em segundos, sem cadastro.">
+  <meta name="keywords" content="calculadora financiamento, simulador financiamento, calculadora consórcio, tabela price, sistema sac, juros compostos, calculadora financeira">
+  <meta name="author" content="FinCalc">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://seudominio.com.br/">
+
+  <!-- =====================================================
+       OPEN GRAPH — COMPARTILHAMENTO
+       ===================================================== -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="FinCalc — Calculadoras Financeiras Grátis">
+  <meta property="og:description" content="Simule financiamentos, consórcios e juros compostos. Rápido, grátis e sem cadastro.">
+  <meta property="og:url" content="https://seudominio.com.br/">
+  <meta property="og:image" content="https://seudominio.com.br/assets/images/og-default.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:site_name" content="FinCalc">
+
+  <!-- =====================================================
+       TWITTER CARD
+       ===================================================== -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="FinCalc — Calculadoras Financeiras Grátis">
+  <meta name="twitter:description" content="Simule financiamentos, consórcios e juros compostos. Rápido, grátis e sem cadastro.">
+  <meta name="twitter:image" content="https://seudominio.com.br/assets/images/og-default.jpg">
+
+  <!-- =====================================================
+       PERFORMANCE — PRECONNECT E PRELOAD
+       ===================================================== -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- =====================================================
+       FAVICON E PWA
+       ===================================================== -->
+  <link rel="icon" type="image/x-icon" href="/assets/icons/favicon.ico">
+  <link rel="apple-touch-icon" href="/assets/icons/icon-192.png">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#0a0e1a">
+
+  <!-- =====================================================
+       CSS — ORDEM OBRIGATÓRIA
+       ===================================================== -->
+  <link rel="stylesheet" href="/css/tokens.css">
+  <link rel="stylesheet" href="/css/reset.css">
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/layout.css">
+  <link rel="stylesheet" href="/css/components.css">
+
+  <!-- =====================================================
+       SCHEMA MARKUP — ORGANIZAÇÃO
+       ===================================================== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "FinCalc",
+    "url": "https://seudominio.com.br",
+    "logo": "https://seudominio.com.br/assets/icons/icon-192.png",
+    "description": "Calculadoras financeiras gratuitas para financiamento e consórcio",
+    "sameAs": []
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "FinCalc",
+    "url": "https://seudominio.com.br",
+    "description": "Calculadoras financeiras gratuitas para financiamento, consórcio, juros compostos e amortização",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://seudominio.com.br/blog/?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
+
+  <!-- =====================================================
+       CONTENT SECURITY POLICY
+       ===================================================== -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://www.googletagmanager.com https://pagead2.googlesyndication.com https://cdn.jsdelivr.net 'unsafe-inline'; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self'; frame-src https://googleads.g.doubleclick.net;">
+</head>
+<body>
+
+  <!-- =====================================================
+       SKIP LINK — ACESSIBILIDADE POR TECLADO
+       ===================================================== -->
+  <a href="#main-content" class="skip-link">Pular para o conteúdo principal</a>
+
+  <!-- =====================================================
+       HEADER
+       ===================================================== -->
+  <header class="site-header" role="banner" id="site-header">
+    <div class="container">
+
+      <!-- Logo -->
+      <a href="/" class="site-logo" aria-label="FinCalc — página inicial">
+        <div class="site-logo__icon" aria-hidden="true">F</div>
+        <span class="site-logo__text">Fin<span>Calc</span></span>
+      </a>
+
+      <!-- Navegação desktop -->
+      <nav class="site-nav" aria-label="Navegação principal">
+        <ul class="site-nav__list" role="list">
+
+          <li class="site-nav__item">
+            <button
+              class="site-nav__link"
+              aria-haspopup="true"
+              aria-expanded="false"
+              aria-controls="dropdown-calculadoras"
+            >
+              Calculadoras
+              <svg class="btn__icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+
+            <div class="site-nav__dropdown" id="dropdown-calculadoras" role="menu">
+
+              <a href="/financiamento/" class="site-nav__dropdown-link" role="menuitem">
+                <div class="site-nav__dropdown-icon" aria-hidden="true">🏠</div>
+                <div class="site-nav__dropdown-info">
+                  <span class="site-nav__dropdown-name">Financiamento</span>
+                  <span class="site-nav__dropdown-desc">Tabela Price e SAC</span>
+                </div>
+              </a>
+
+              <a href="/consorcio/" class="site-nav__dropdown-link" role="menuitem">
+                <div class="site-nav__dropdown-icon" aria-hidden="true">🤝</div>
+                <div class="site-nav__dropdown-info">
+                  <span class="site-nav__dropdown-name">Consórcio</span>
+                  <span class="site-nav__dropdown-desc">Parcela e taxa de adm</span>
+                </div>
+              </a>
+
+              <a href="/juros-compostos/" class="site-nav__dropdown-link" role="menuitem">
+                <div class="site-nav__dropdown-icon" aria-hidden="true">📈</div>
+                <div class="site-nav__dropdown-info">
+                  <span class="site-nav__dropdown-name">Juros Compostos</span>
+                  <span class="site-nav__dropdown-desc">Montante e rendimento</span>
+                </div>
+              </a>
+
+              <a href="/amortizacao/" class="site-nav__dropdown-link" role="menuitem">
+                <div class="site-nav__dropdown-icon" aria-hidden="true">📊</div>
+                <div class="site-nav__dropdown-info">
+                  <span class="site-nav__dropdown-name">Tabela de Amortização</span>
+                  <span class="site-nav__dropdown-desc">Parcela a parcela</span>
+                </div>
+              </a>
+
+              <a href="/cet/" class="site-nav__dropdown-link" role="menuitem">
+                <div class="site-nav__dropdown-icon" aria-hidden="true">💡</div>
+                <div class="site-nav__dropdown-info">
+                  <span class="site-nav__dropdown-name">CET</span>
+                  <span class="site-nav__dropdown-desc">Custo Efetivo Total</span>
+                </div>
+              </a>
+
+            </div>
+          </li>
+
+          <li class="site-nav__item">
+            <a href="/blog/" class="site-nav__link">Blog</a>
+          </li>
+
+          <li class="site-nav__item">
+            <a href="/blog/financiamento-vs-consorcio/" class="site-nav__link">Financiamento vs Consórcio</a>
+          </li>
+
+        </ul>
+      </nav>
+
+      <!-- Ações do header -->
+      <div class="site-header__actions">
+        <a href="/financiamento/" class="btn btn--primary btn--sm hide-mobile" aria-label="Simular financiamento agora">
+          Simular Grátis
+        </a>
+
+        <!-- Botão hambúrguer (mobile) -->
+        <button
+          class="mobile-menu-btn"
+          aria-label="Abrir menu de navegação"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+          id="mobile-menu-btn"
+        >
+          <span class="mobile-menu-btn__line" aria-hidden="true"></span>
+          <span class="mobile-menu-btn__line" aria-hidden="true"></span>
+          <span class="mobile-menu-btn__line" aria-hidden="true"></span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- Menu mobile -->
+  <div
+    class="mobile-menu"
+    id="mobile-menu"
+    role="dialog"
+    aria-label="Menu de navegação"
+    aria-modal="true"
+    hidden
+  >
+    <div class="mobile-menu__inner">
+
+      <p class="mobile-menu__section-title">Calculadoras</p>
+
+      <a href="/financiamento/" class="mobile-menu__link">
+        <span aria-hidden="true">🏠</span> Calculadora de Financiamento
+      </a>
+      <a href="/consorcio/" class="mobile-menu__link">
+        <span aria-hidden="true">🤝</span> Calculadora de Consórcio
+      </a>
+      <a href="/juros-compostos/" class="mobile-menu__link">
+        <span aria-hidden="true">📈</span> Juros Compostos
+      </a>
+      <a href="/amortizacao/" class="mobile-menu__link">
+        <span aria-hidden="true">📊</span> Tabela de Amortização
+      </a>
+      <a href="/cet/" class="mobile-menu__link">
+        <span aria-hidden="true">💡</span> Custo Efetivo Total (CET)
+      </a>
+      <a href="/refinanciamento/" class="mobile-menu__link">
+        <span aria-hidden="true">🔄</span> Refinanciamento
+      </a>
+
+      <p class="mobile-menu__section-title">Conteúdo</p>
+
+      <a href="/blog/" class="mobile-menu__link">
+        <span aria-hidden="true">📝</span> Blog e Artigos
+      </a>
+      <a href="/blog/financiamento-vs-consorcio/" class="mobile-menu__link">
+        <span aria-hidden="true">⚖️</span> Financiamento vs Consórcio
+      </a>
+
+      <div style="margin-top: var(--space-6);">
+        <a href="/financiamento/" class="btn btn--primary btn--full">Simular Financiamento Grátis</a>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- =====================================================
+       CONTEÚDO PRINCIPAL
+       ===================================================== -->
+  <main id="main-content">
+
+    <!-- ===================================================
+         HERO — SEÇÃO PRINCIPAL
+         =================================================== -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="container">
+        <div class="hero__content">
+
+          <div class="hero__badge">
+            <span class="badge badge--accent">✦ 100% Grátis e Sem Cadastro</span>
+          </div>
+
+          <h1 class="hero__title" id="hero-title">
+            Calcule seu
+            <span class="heading-gradient">Financiamento</span>
+            com precisão
+          </h1>
+
+          <p class="hero__subtitle">
+            Simuladores financeiros completos para financiamento, consórcio,
+            juros compostos e amortização. Resultados precisos em segundos.
+          </p>
+
+          <div class="hero__actions">
+            <a href="/financiamento/" class="btn btn--primary btn--lg">
+              <svg class="btn__icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+              Simular Financiamento
+            </a>
+            <a href="/consorcio/" class="btn btn--outline btn--lg">
+              Ver Consórcio
+            </a>
+          </div>
+
+          <!-- Indicadores de confiança -->
+          <div class="hero-trust" aria-label="Diferenciais do FinCalc">
+            <div class="hero-trust__item">
+              <span class="hero-trust__icon" aria-hidden="true">⚡</span>
+              <span class="hero-trust__label">Resultado instantâneo</span>
+            </div>
+            <div class="hero-trust__item">
+              <span class="hero-trust__icon" aria-hidden="true">🔒</span>
+              <span class="hero-trust__label">Sem salvar seus dados</span>
+            </div>
+            <div class="hero-trust__item">
+              <span class="hero-trust__icon" aria-hidden="true">📱</span>
+              <span class="hero-trust__label">Funciona no celular</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================
+         SLOT DE ANÚNCIO — APÓS HERO
+         Altura reservada antes do carregamento (evita CLS)
+         =================================================== -->
+    <div class="container">
+      <div class="ad-slot ad-slot--horizontal ad-slot--banner" aria-label="Espaço publicitário">
+        <span class="ad-slot__label">Publicidade</span>
+        <div class="ad-slot__inner">
+          <!-- AdSense inserido via JS após interação do usuário -->
+        </div>
+      </div>
+    </div>
+
+    <!-- ===================================================
+         CALCULADORAS — GRID PRINCIPAL
+         =================================================== -->
+    <section class="section" aria-labelledby="calc-section-title">
+      <div class="container">
+
+        <div class="section__header">
+          <span class="section__eyebrow">Ferramentas</span>
+          <h2 class="section__title" id="calc-section-title">
+            Escolha sua calculadora
+          </h2>
+          <p class="section__desc">
+            Todas as calculadoras seguem as normas do Banco Central do Brasil
+            e usam fórmulas financeiras precisas.
+          </p>
+        </div>
+
+        <div class="calc-grid" role="list">
+
+          <!-- Card: Financiamento -->
+          <article class="card card--clickable" role="listitem">
+            <a href="/financiamento/" class="calc-card" aria-label="Calculadora de Financiamento Imobiliário — sistemas Price e SAC">
+              <div class="calc-card__icon-wrap" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+              </div>
+              <div>
+                <h3 class="calc-card__title">Calculadora de Financiamento</h3>
+                <p class="calc-card__desc">
+                  Simule financiamentos pelos sistemas Price e SAC. Compare parcelas,
+                  juros totais e o custo real do seu financiamento.
+                </p>
+              </div>
+              <span class="calc-card__cta" aria-hidden="true">
+                Simular agora
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </span>
+            </a>
+          </article>
+
+          <!-- Card: Consórcio -->
+          <article class="card card--clickable" role="listitem">
+            <a href="/consorcio/" class="calc-card" aria-label="Calculadora de Consórcio — parcelas e taxa de administração">
+              <div class="calc-card__icon-wrap" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+              </div>
+              <div>
+                <h3 class="calc-card__title">Calculadora de Consórcio</h3>
+                <p class="calc-card__desc">
+                  Calcule parcelas do consórcio com taxa de administração, fundo de reserva
+                  e simule o impacto do lance na contemplação.
+                </p>
+              </div>
+              <span class="calc-card__cta" aria-hidden="true">
+                Simular agora
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </span>
+            </a>
+          </article>
+
+          <!-- Card: Juros Compostos -->
+          <article class="card card--clickable" role="listitem">
+            <a href="/juros-compostos/" class="calc-card" aria-label="Calculadora de Juros Compostos — montante e rendimento">
+              <div class="calc-card__icon-wrap" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>
+              </div>
+              <div>
+                <h3 class="calc-card__title">Juros Compostos</h3>
+                <p class="calc-card__desc">
+                  Calcule o montante final de um investimento ou empréstimo com juros
+                  compostos. Veja o crescimento mês a mês.
+                </p>
+              </div>
+              <span class="calc-card__cta" aria-hidden="true">
+                Simular agora
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </span>
+            </a>
+          </article>
+
+          <!-- Card: Amortização -->
+          <article class="card card--clickable" role="listitem">
+            <a href="/amortizacao/" class="calc-card" aria-label="Tabela de Amortização completa mês a mês">
+              <div class="calc-card__icon-wrap" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="3" y1="15" x2="21" y2="15"></line><line x1="9" y1="9" x2="9" y2="21"></line></svg>
+              </div>
+              <div>
+                <h3 class="calc-card__title">Tabela de Amortização</h3>
+                <p class="calc-card__desc">
+                  Veja a evolução completa do seu financiamento: saldo devedor, amortização
+                  e juros de cada parcela, mês a mês.
+                </p>
+              </div>
+              <span class="calc-card__cta" aria-hidden="true">
+                Simular agora
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </span>
+            </a>
+          </article>
+
+          <!-- Card: CET -->
+          <article class="card card--clickable" role="listitem">
+            <a href="/cet/" class="calc-card" aria-label="Calculadora de CET — Custo Efetivo Total">
+              <div class="calc-card__icon-wrap" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+              </div>
+              <div>
+                <h3 class="calc-card__title">CET — Custo Efetivo Total</h3>
+                <p class="calc-card__desc">
+                  Calcule o CET do seu financiamento incluindo tarifas, seguros e
+                  outros encargos. Compare diferentes propostas de crédito.
+                </p>
+              </div>
+              <span class="calc-card__cta" aria-hidden="true">
+                Calcular agora
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </span>
+            </a>
+          </article>
+
+          <!-- Card: Refinanciamento -->
+          <article class="card card--clickable" role="listitem">
+            <a href="/refinanciamento/" class="calc-card" aria-label="Calculadora de Refinanciamento — compare modalidades">
+              <div class="calc-card__icon-wrap" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="1 4 1 10 7 10"></polyline><polyline points="23 20 23 14 17 14"></polyline><path d="M20.49 9A9 9 0 0 0 5.64 5.64L1 10m22 4l-4.64 4.36A9 9 0 0 1 3.51 15"></path></svg>
+              </div>
+              <div>
+                <h3 class="calc-card__title">Refinanciamento</h3>
+                <p class="calc-card__desc">
+                  Compare seu financiamento atual com novas condições. Descubra se
+                  vale a pena refinanciar e quanto você economizaria.
+                </p>
+              </div>
+              <span class="calc-card__cta" aria-hidden="true">
+                Comparar agora
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </span>
+            </a>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================
+         SEÇÃO: COMPARATIVO FINANCIAMENTO X CONSÓRCIO
+         =================================================== -->
+    <section class="section section--alt" aria-labelledby="comparativo-title">
+      <div class="container">
+
+        <div class="section__header">
+          <span class="section__eyebrow">Comparativo</span>
+          <h2 class="section__title" id="comparativo-title">
+            Financiamento ou Consórcio?
+          </h2>
+          <p class="section__desc">
+            Entenda as principais diferenças antes de decidir qual modalidade é melhor para o seu perfil.
+          </p>
+        </div>
+
+        <div class="compare-grid" role="list">
+
+          <div class="card card--accent-top" role="listitem" aria-label="Características do Financiamento">
+            <div class="compare-card__header">
+              <span class="compare-card__icon" aria-hidden="true">🏦</span>
+              <h3 class="compare-card__title">Financiamento</h3>
+              <span class="badge badge--accent">Acesso Imediato</span>
+            </div>
+            <ul class="compare-list" role="list">
+              <li class="compare-list__item compare-list__item--pro">Recebe o bem imediatamente</li>
+              <li class="compare-list__item compare-list__item--pro">Prazo fixo e previsível</li>
+              <li class="compare-list__item compare-list__item--pro">Pode usar FGTS como entrada</li>
+              <li class="compare-list__item compare-list__item--con">Juros elevados (8% a 12% a.a.)</li>
+              <li class="compare-list__item compare-list__item--con">Exige entrada mínima</li>
+              <li class="compare-list__item compare-list__item--con">Análise de crédito rigorosa</li>
+            </ul>
+            <a href="/financiamento/" class="btn btn--primary btn--full" style="margin-top: var(--space-4);">
+              Simular Financiamento
+            </a>
+          </div>
+
+          <div class="card card--success-top" role="listitem" aria-label="Características do Consórcio">
+            <div class="compare-card__header">
+              <span class="compare-card__icon" aria-hidden="true">🤝</span>
+              <h3 class="compare-card__title">Consórcio</h3>
+              <span class="badge badge--success">Sem Juros</span>
+            </div>
+            <ul class="compare-list" role="list">
+              <li class="compare-list__item compare-list__item--pro">Sem juros — só taxa de adm</li>
+              <li class="compare-list__item compare-list__item--pro">Parcelas menores</li>
+              <li class="compare-list__item compare-list__item--pro">Poder de compra à vista</li>
+              <li class="compare-list__item compare-list__item--con">Não há prazo garantido</li>
+              <li class="compare-list__item compare-list__item--con">Pode demorar para ser contemplado</li>
+              <li class="compare-list__item compare-list__item--con">Exige planejamento de longo prazo</li>
+            </ul>
+            <a href="/consorcio/" class="btn btn--outline btn--full" style="margin-top: var(--space-4);">
+              Simular Consórcio
+            </a>
+          </div>
+
+        </div>
+
+        <div class="compare-cta">
+          <p class="compare-cta__text">Ainda em dúvida? Leia nosso guia completo.</p>
+          <a href="/blog/financiamento-vs-consorcio/" class="btn btn--ghost">
+            Ver comparativo completo →
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===================================================
+         SLOT DE ANÚNCIO — MEIO DA PÁGINA
+         =================================================== -->
+    <div class="container">
+      <div class="ad-slot ad-slot--horizontal ad-slot--banner" aria-label="Espaço publicitário">
+        <span class="ad-slot__label">Publicidade</span>
+        <div class="ad-slot__inner"></div>
+      </div>
+    </div>
+
+    <!-- ===================================================
+         SEÇÃO: COMO FUNCIONA
+         =================================================== -->
+    <section class="section" aria-labelledby="como-funciona-title">
+      <div class="container">
+
+        <div class="section__header">
+          <span class="section__eyebrow">Simples assim</span>
+          <h2 class="section__title" id="como-funciona-title">
+            Como usar as calculadoras
+          </h2>
+        </div>
+
+        <ol class="steps-list" role="list">
+          <li class="steps-item">
+            <div class="steps-item__number" aria-hidden="true">1</div>
+            <div class="steps-item__content">
+              <h3 class="steps-item__title">Escolha a calculadora</h3>
+              <p class="steps-item__desc">Selecione entre financiamento, consórcio, juros compostos ou amortização conforme sua necessidade.</p>
+            </div>
+          </li>
+          <li class="steps-item">
+            <div class="steps-item__number" aria-hidden="true">2</div>
+            <div class="steps-item__content">
+              <h3 class="steps-item__title">Informe os dados</h3>
+              <p class="steps-item__desc">Digite o valor do bem, entrada, taxa de juros e prazo. Todos os campos têm exemplos para te guiar.</p>
+            </div>
+          </li>
+          <li class="steps-item">
+            <div class="steps-item__number" aria-hidden="true">3</div>
+            <div class="steps-item__content">
+              <h3 class="steps-item__title">Veja o resultado</h3>
+              <p class="steps-item__desc">Receba instantaneamente o valor da parcela, total de juros, CET e a tabela de amortização completa.</p>
+            </div>
+          </li>
+        </ol>
+
+      </div>
+    </section>
+
+    <!-- ===================================================
+         SEÇÃO: ARTIGOS RECENTES DO BLOG
+         =================================================== -->
+    <section class="section section--alt" aria-labelledby="blog-section-title">
+      <div class="container">
+
+        <div class="section__header">
+          <span class="section__eyebrow">Blog</span>
+          <h2 class="section__title" id="blog-section-title">
+            Entenda antes de decidir
+          </h2>
+          <p class="section__desc">
+            Artigos explicativos para te ajudar a tomar a melhor decisão financeira.
+          </p>
+        </div>
+
+        <div class="blog-preview-grid" role="list">
+
+          <article class="card card--clickable" role="listitem">
+            <a href="/blog/financiamento-vs-consorcio/" class="blog-preview-card" aria-label="Artigo: Financiamento ou Consórcio — qual é melhor em 2025">
+              <div class="blog-preview-card__meta">
+                <span class="badge badge--accent">Comparativo</span>
+                <time datetime="2025-01-15" class="blog-preview-card__date">Jan 2025</time>
+              </div>
+              <h3 class="blog-preview-card__title">
+                Financiamento ou Consórcio: Qual é Melhor em 2025?
+              </h3>
+              <p class="blog-preview-card__desc">
+                Análise completa das duas modalidades com exemplos reais de custo total e cenários de uso.
+              </p>
+              <span class="calc-card__cta" aria-hidden="true">
+                Ler artigo
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </span>
+            </a>
+          </article>
+
+          <article class="card card--clickable" role="listitem">
+            <a href="/blog/tabela-price-vs-sac/" class="blog-preview-card" aria-label="Artigo: Tabela Price vs SAC — diferenças e quando usar cada um">
+              <div class="blog-preview-card__meta">
+                <span class="badge badge--neutral">Educativo</span>
+                <time datetime="2025-01-20" class="blog-preview-card__date">Jan 2025</time>
+              </div>
+              <h3 class="blog-preview-card__title">
+                Tabela Price vs SAC: Qual Sistema Escolher?
+              </h3>
+              <p class="blog-preview-card__desc">
+                Entenda as diferenças entre os dois sistemas de amortização e saiba qual é mais vantajoso no seu caso.
+              </p>
+              <span class="calc-card__cta" aria-hidden="true">
+                Ler artigo
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </span>
+            </a>
+          </article>
+
+          <article class="card card--clickable" role="listitem">
+            <a href="/blog/como-usar-fgts/" class="blog-preview-card" aria-label="Artigo: Como usar o FGTS no financiamento imobiliário">
+              <div class="blog-preview-card__meta">
+                <span class="badge badge--neutral">Educativo</span>
+                <time datetime="2025-02-01" class="blog-preview-card__date">Fev 2025</time>
+              </div>
+              <h3 class="blog-preview-card__title">
+                Como Usar o FGTS no Financiamento Imobiliário
+              </h3>
+              <p class="blog-preview-card__desc">
+                Regras atualizadas para uso do FGTS na compra de imóvel: quem pode usar, limites e como abater nas parcelas.
+              </p>
+              <span class="calc-card__cta" aria-hidden="true">
+                Ler artigo
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </span>
+            </a>
+          </article>
+
+        </div>
+
+        <div class="text-center" style="margin-top: var(--space-8);">
+          <a href="/blog/" class="btn btn--outline">Ver todos os artigos</a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===================================================
+         FAQ — PERGUNTAS FREQUENTES
+         =================================================== -->
+    <section class="section" aria-labelledby="faq-title">
+      <div class="container container--md">
+
+        <div class="section__header">
+          <span class="section__eyebrow">Dúvidas</span>
+          <h2 class="section__title" id="faq-title">
+            Perguntas frequentes
+          </h2>
+        </div>
+
+        <div class="accordion" role="list" id="faq-accordion">
+
+          <div class="accordion__item" role="listitem">
+            <button
+              class="accordion__trigger"
+              aria-expanded="false"
+              aria-controls="faq-1"
+              id="faq-btn-1"
+            >
+              As calculadoras são realmente gratuitas?
+              <svg class="accordion__icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+            <div class="accordion__body" id="faq-1" role="region" aria-labelledby="faq-btn-1">
+              <div class="accordion__content">
+                Sim, todas as calculadoras do FinCalc são 100% gratuitas e não exigem cadastro.
+                O site é mantido através de anúncios não intrusivos.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion__item" role="listitem">
+            <button
+              class="accordion__trigger"
+              aria-expanded="false"
+              aria-controls="faq-2"
+              id="faq-btn-2"
+            >
+              Os meus dados ficam salvos?
+              <svg class="accordion__icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+            <div class="accordion__body" id="faq-2" role="region" aria-labelledby="faq-btn-2">
+              <div class="accordion__content">
+                Não. O FinCalc não possui banco de dados e não envia seus dados para nenhum servidor.
+                Todos os cálculos acontecem diretamente no seu navegador. Seus dados ficam apenas
+                com você.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion__item" role="listitem">
+            <button
+              class="accordion__trigger"
+              aria-expanded="false"
+              aria-controls="faq-3"
+              id="faq-btn-3"
+            >
+              Os resultados são precisos?
+              <svg class="accordion__icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+            <div class="accordion__body" id="faq-3" role="region" aria-labelledby="faq-btn-3">
+              <div class="accordion__content">
+                Sim. As fórmulas seguem as normas do Banco Central do Brasil e os sistemas
+                Price e SAC conforme definidos pela regulamentação vigente. Os resultados
+                podem ter pequenas diferenças em relação ao banco por causa de arredondamentos
+                ou taxas adicionais cobradas por cada instituição.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion__item" role="listitem">
+            <button
+              class="accordion__trigger"
+              aria-expanded="false"
+              aria-controls="faq-4"
+              id="faq-btn-4"
+            >
+              Qual a diferença entre Tabela Price e SAC?
+              <svg class="accordion__icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+            <div class="accordion__body" id="faq-4" role="region" aria-labelledby="faq-btn-4">
+              <div class="accordion__content">
+                Na Tabela Price, as parcelas são iguais do início ao fim. No SAC (Sistema de
+                Amortização Constante), a amortização é fixa, fazendo com que os juros e as
+                parcelas diminuam ao longo do tempo. No total, o SAC costuma ser mais barato
+                que o Price.
+                <a href="/blog/tabela-price-vs-sac/" style="display:inline-block; margin-top: var(--space-2);">
+                  Ler artigo completo sobre Price vs SAC →
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion__item" role="listitem">
+            <button
+              class="accordion__trigger"
+              aria-expanded="false"
+              aria-controls="faq-5"
+              id="faq-btn-5"
+            >
+              Posso usar o FinCalc no celular?
+              <svg class="accordion__icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+            <div class="accordion__body" id="faq-5" role="region" aria-labelledby="faq-btn-5">
+              <div class="accordion__content">
+                Sim. O FinCalc é totalmente responsivo e funciona em qualquer dispositivo —
+                celular, tablet ou computador. Você também pode instalá-lo como aplicativo
+                no celular pelo menu do navegador.
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================
+         CTA FINAL
+         =================================================== -->
+    <section class="section hero" aria-labelledby="cta-title" style="padding-top: var(--space-16); padding-bottom: var(--space-16);">
+      <div class="container">
+        <div class="hero__content">
+          <h2 class="hero__title" id="cta-title" style="font-size: var(--font-size-2xl);">
+            Pronto para simular?
+          </h2>
+          <p class="hero__subtitle" style="font-size: var(--font-size-base);">
+            Escolha uma calculadora e veja em segundos quanto vai pagar no total.
+          </p>
+          <div class="hero__actions">
+            <a href="/financiamento/" class="btn btn--primary btn--lg">Simular Financiamento</a>
+            <a href="/consorcio/" class="btn btn--outline btn--lg">Simular Consórcio</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- =====================================================
+       FOOTER
+       ===================================================== -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+
+      <div class="footer-grid">
+
+        <!-- Coluna: Marca -->
+        <div>
+          <a href="/" class="footer-brand__logo" aria-label="FinCalc — início">
+            <div class="site-logo__icon" aria-hidden="true">F</div>
+            <span class="site-logo__text">Fin<span>Calc</span></span>
+          </a>
+          <p class="footer-brand__desc">
+            Calculadoras financeiras gratuitas para financiamento, consórcio
+            e investimentos. Precisão e simplicidade para a sua decisão.
+          </p>
+        </div>
+
+        <!-- Coluna: Calculadoras -->
+        <div>
+          <p class="footer-col__title">Calculadoras</p>
+          <ul class="footer-col__list" role="list">
+            <li><a href="/financiamento/" class="footer-col__link">Financiamento</a></li>
+            <li><a href="/consorcio/" class="footer-col__link">Consórcio</a></li>
+            <li><a href="/juros-compostos/" class="footer-col__link">Juros Compostos</a></li>
+            <li><a href="/amortizacao/" class="footer-col__link">Amortização</a></li>
+            <li><a href="/cet/" class="footer-col__link">CET</a></li>
+            <li><a href="/refinanciamento/" class="footer-col__link">Refinanciamento</a></li>
+          </ul>
+        </div>
+
+        <!-- Coluna: Blog -->
+        <div>
+          <p class="footer-col__title">Conteúdo</p>
+          <ul class="footer-col__list" role="list">
+            <li><a href="/blog/" class="footer-col__link">Blog</a></li>
+            <li><a href="/blog/financiamento-vs-consorcio/" class="footer-col__link">Financiamento vs Consórcio</a></li>
+            <li><a href="/blog/tabela-price-vs-sac/" class="footer-col__link">Price vs SAC</a></li>
+            <li><a href="/blog/como-usar-fgts/" class="footer-col__link">Como usar o FGTS</a></li>
+          </ul>
+        </div>
+
+        <!-- Coluna: Legal -->
+        <div>
+          <p class="footer-col__title">Legal</p>
+          <ul class="footer-col__list" role="list">
+            <li><a href="/privacidade/" class="footer-col__link">Política de Privacidade</a></li>
+            <li><a href="/termos/" class="footer-col__link">Termos de Uso</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Barra inferior -->
+      <div class="footer-bottom">
+        <p class="footer-bottom__copy">
+          © <span id="footer-year"></span> FinCalc. Todos os direitos reservados.
+        </p>
+        <p class="footer-bottom__disclaimer">
+          As simulações são meramente ilustrativas e não constituem proposta de crédito.
+          Consulte sempre a instituição financeira para condições definitivas.
+        </p>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- =====================================================
+       TOAST CONTAINER (injetado por JS)
+       ===================================================== -->
+  <div class="toast-container" id="toast-container" aria-live="polite" aria-atomic="false"></div>
+
+  <!-- =====================================================
+       JAVASCRIPT — defer (executa após parsing do HTML)
+       ===================================================== -->
+  <script defer src="/js/utils/formatters.js" type="module"></script>
+  <script defer src="/js/utils/validators.js" type="module"></script>
+  <script defer src="/js/core/app.js" type="module"></script>
+
+  <!-- Script inline mínimo — apenas UI sem dependência de módulos -->
+  <script>
+    (function () {
+      'use strict';
+
+      // ── Ano no footer ──────────────────────────────────
+      var yearEl = document.getElementById('footer-year');
+      if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+      // ── Header: sombra ao rolar ────────────────────────
+      var header = document.getElementById('site-header');
+      if (header) {
+        var onScroll = function () {
+          if (window.scrollY > 8) {
+            header.classList.add('is-scrolled');
+          } else {
+            header.classList.remove('is-scrolled');
+          }
+        };
+        window.addEventListener('scroll', onScroll, { passive: true });
+      }
+
+      // ── Menu mobile ────────────────────────────────────
+      var menuBtn  = document.getElementById('mobile-menu-btn');
+      var mobileMenu = document.getElementById('mobile-menu');
+
+      if (menuBtn && mobileMenu) {
+        var isOpen = false;
+
+        var openMenu = function () {
+          isOpen = true;
+          menuBtn.classList.add('is-open');
+          menuBtn.setAttribute('aria-expanded', 'true');
+          mobileMenu.classList.add('is-open');
+          mobileMenu.removeAttribute('hidden');
+          document.body.style.overflow = 'hidden';
+        };
+
+        var closeMenu = function () {
+          isOpen = false;
+          menuBtn.classList.remove('is-open');
+          menuBtn.setAttribute('aria-expanded', 'false');
+          mobileMenu.classList.remove('is-open');
+          document.body.style.overflow = '';
+          // Aguarda transição antes de esconder
+          setTimeout(function () {
+            if (!isOpen) mobileMenu.setAttribute('hidden', '');
+          }, 300);
+        };
+
+        menuBtn.addEventListener('click', function () {
+          if (isOpen) { closeMenu(); } else { openMenu(); }
+        });
+
+        // Fecha ao clicar em link dentro do menu
+        mobileMenu.querySelectorAll('a').forEach(function (link) {
+          link.addEventListener('click', closeMenu);
+        });
+
+        // Fecha ao pressionar Escape
+        document.addEventListener('keydown', function (e) {
+          if (e.key === 'Escape' && isOpen) closeMenu();
+        });
+      }
+
+      // ── Accordion ─────────────────────────────────────
+      var accordion = document.getElementById('faq-accordion');
+      if (accordion) {
+        accordion.querySelectorAll('.accordion__trigger').forEach(function (btn) {
+          btn.addEventListener('click', function () {
+            var item      = btn.closest('.accordion__item');
+            var isOpenNow = item.classList.contains('is-open');
+
+            // Fecha todos
+            accordion.querySelectorAll('.accordion__item').forEach(function (i) {
+              i.classList.remove('is-open');
+              i.querySelector('.accordion__trigger').setAttribute('aria-expanded', 'false');
+            });
+
+            // Abre o clicado (se estava fechado)
+            if (!isOpenNow) {
+              item.classList.add('is-open');
+              btn.setAttribute('aria-expanded', 'true');
+            }
+          });
+        });
+      }
+
+      // ── Lazy load AdSense após interação ───────────────
+      var adsLoaded = false;
+      var loadAds = function () {
+        if (adsLoaded) return;
+        adsLoaded = true;
+        // Substitua 'ca-pub-XXXXXXXXXXXXXXXX' pelo seu Publisher ID real
+        // var s = document.createElement('script');
+        // s.async = true;
+        // s.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX';
+        // s.crossOrigin = 'anonymous';
+        // document.head.appendChild(s);
+      };
+      document.addEventListener('scroll', loadAds, { once: true, passive: true });
+      document.addEventListener('click',  loadAds, { once: true });
+      document.addEventListener('touchstart', loadAds, { once: true, passive: true });
+
+    }());
+  </script>
+
+</body>
+</html>
