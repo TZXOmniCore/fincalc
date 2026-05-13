@@ -1,0 +1,56 @@
+# ================================================================
+# robots.txt — FinCalc
+# Instruções para crawlers de mecanismos de busca.
+# Referência: https://www.robotstxt.org/robotstxt.html
+# ================================================================
+
+# ── Regras para todos os crawlers ────────────────────────────────
+User-agent: *
+
+# Permitir indexação completa do site
+Allow: /
+
+# Bloquear pastas internas que não devem ser indexadas
+Disallow: /docs/
+Disallow: /assets/icons/
+Disallow: /privacidade/
+Disallow: /termos/
+
+# Bloquear parâmetros de URL que geram conteúdo duplicado
+Disallow: /*?utm_*
+Disallow: /*?fbclid=*
+Disallow: /*?gclid=*
+Disallow: /*?ref=*
+
+# ── Regras específicas por crawler ───────────────────────────────
+
+# Googlebot — sem restrições adicionais
+User-agent: Googlebot
+Allow: /
+
+# Bingbot — sem restrições adicionais
+User-agent: Bingbot
+Allow: /
+
+# ── Bloqueio de crawlers maliciosos e scrapers ────────────────────
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+User-agent: BLEXBot
+Disallow: /
+
+User-agent: DataForSeoBot
+Disallow: /
+
+# ── Sitemap ───────────────────────────────────────────────────────
+# Substitua "seudominio.com.br" pelo seu domínio real
+Sitemap: https://seudominio.com.br/sitemap.xml
