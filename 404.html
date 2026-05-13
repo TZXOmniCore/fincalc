@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <!-- =====================================================
+       META ESSENCIAL
+       ===================================================== -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <!-- =====================================================
+       SEO — PÁGINA DE ERRO NÃO DEVE SER INDEXADA
+       ===================================================== -->
+  <title>Página não encontrada | FinCalc</title>
+  <meta name="description" content="A página que você procura não existe. Volte para as calculadoras financeiras do FinCalc.">
+  <meta name="robots" content="noindex, nofollow">
+
+  <!-- =====================================================
+       PERFORMANCE
+       ===================================================== -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- =====================================================
+       FAVICON
+       ===================================================== -->
+  <link rel="icon" type="image/x-icon" href="/assets/icons/favicon.ico">
+  <link rel="apple-touch-icon" href="/assets/icons/icon-192.png">
+  <meta name="theme-color" content="#0a0e1a">
+
+  <!-- =====================================================
+       CSS — ORDEM OBRIGATÓRIA
+       ===================================================== -->
+  <link rel="stylesheet" href="/css/tokens.css">
+  <link rel="stylesheet" href="/css/reset.css">
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/layout.css">
+  <link rel="stylesheet" href="/css/components.css">
+
+  <!-- =====================================================
+       ESTILOS ESPECÍFICOS DESTA PÁGINA
+       ===================================================== -->
+  <style>
+    /* Layout centralizado verticalmente */
+    .error-page {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .error-page main {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: var(--space-12) var(--space-4);
+    }
+
+    /* Container central */
+    .error-container {
+      text-align: center;
+      max-width: 560px;
+      width: 100%;
+      animation: fadeInUp var(--duration-slow) var(--ease-out) both;
+    }
+
+    /* Número 404 grande */
+    .error-code {
+      font-family: var(--font-mono);
+      font-size: clamp(5rem, 20vw, 9rem);
+      font-weight: var(--font-weight-extrabold);
+      line-height: 1;
+      letter-spacing: var(--letter-spacing-tight);
+      background: linear-gradient(
+        135deg,
+        var(--color-text-muted) 0%,
+        var(--color-border-light) 50%,
+        var(--color-text-muted) 100%
+      );
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: var(--space-6);
+      user-select: none;
+    }
+
+    /* Ícone decorativo */
+    .error-icon {
+      width: 64px;
+      height: 64px;
+      margin: 0 auto var(--space-6);
+      background-color: var(--color-warning-subtle);
+      border-radius: var(--radius-xl);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-warning);
+    }
+
+    /* Título */
+    .error-title {
+      font-size: var(--font-size-2xl);
+      font-weight: var(--font-weight-bold);
+      color: var(--color-text-primary);
+      margin-bottom: var(--space-4);
+      line-height: var(--line-height-tight);
+    }
+
+    /* Descrição */
+    .error-desc {
+      font-size: var(--font-size-base);
+      color: var(--color-text-secondary);
+      line-height: var(--line-height-relaxed);
+      margin-bottom: var(--space-8);
+    }
+
+    /* Botões de ação */
+    .error-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-3);
+      justify-content: center;
+      margin-bottom: var(--space-10);
+    }
+
+    /* Divisor */
+    .error-divider {
+      height: 1px;
+      background: var(--color-border);
+      margin-bottom: var(--space-8);
+    }
+
+    /* Sugestões de links úteis */
+    .error-suggestions__title {
+      font-size: var(--font-size-sm);
+      font-weight: var(--font-weight-semibold);
+      color: var(--color-text-muted);
+      text-transform: uppercase;
+      letter-spacing: var(--letter-spacing-wider);
+      margin-bottom: var(--space-4);
+    }
+
+    .error-suggestions__grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--space-3);
+    }
+
+    @media (min-width: 480px) {
+      .error-suggestions__grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .error-suggestion-link {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: var(--space-2);
+      padding: var(--space-4) var(--space-3);
+      background-color: var(--color-bg-card);
+      border: var(--border-width-thin) solid var(--color-border);
+      border-radius: var(--radius-md);
+      text-decoration: none;
+      color: var(--color-text-secondary);
+      font-size: var(--font-size-sm);
+      font-weight: var(--font-weight-medium);
+      text-align: center;
+      transition:
+        border-color     var(--transition-fast),
+        color            var(--transition-fast),
+        background-color var(--transition-fast),
+        transform        var(--transition-fast);
+    }
+
+    .error-suggestion-link:hover {
+      border-color: var(--color-border-focus);
+      color: var(--color-text-primary);
+      background-color: var(--color-bg-card-hover);
+      transform: translateY(-2px);
+      text-decoration: none;
+    }
+
+    .error-suggestion-link__icon {
+      font-size: 1.5rem;
+      line-height: 1;
+    }
+
+    /* Contador regressivo de redirecionamento */
+    .error-redirect {
+      margin-top: var(--space-8);
+      font-size: var(--font-size-xs);
+      color: var(--color-text-muted);
+    }
+
+    .error-redirect__count {
+      font-family: var(--font-mono);
+      font-weight: var(--font-weight-bold);
+      color: var(--color-accent);
+    }
+  </style>
+</head>
+<body class="error-page">
+
+  <!-- =====================================================
+       SKIP LINK
+       ===================================================== -->
+  <a href="#main-content" class="skip-link">Pular para o conteúdo principal</a>
+
+  <!-- =====================================================
+       HEADER SIMPLIFICADO
+       ===================================================== -->
+  <header class="site-header" role="banner" id="site-header">
+    <div class="container">
+
+      <a href="/" class="site-logo" aria-label="FinCalc — voltar para a página inicial">
+        <div class="site-logo__icon" aria-hidden="true">F</div>
+        <span class="site-logo__text">Fin<span>Calc</span></span>
+      </a>
+
+      <nav class="site-nav" aria-label="Navegação principal">
+        <ul class="site-nav__list" role="list">
+          <li class="site-nav__item">
+            <a href="/" class="site-nav__link">Início</a>
+          </li>
+          <li class="site-nav__item">
+            <a href="/financiamento/" class="site-nav__link">Financiamento</a>
+          </li>
+          <li class="site-nav__item">
+            <a href="/consorcio/" class="site-nav__link">Consórcio</a>
+          </li>
+          <li class="site-nav__item">
+            <a href="/blog/" class="site-nav__link">Blog</a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="site-header__actions">
+        <a href="/" class="btn btn--primary btn--sm hide-mobile">
+          Voltar ao início
+        </a>
+
+        <button
+          class="mobile-menu-btn"
+          aria-label="Abrir menu"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+          id="mobile-menu-btn"
+        >
+          <span class="mobile-menu-btn__line" aria-hidden="true"></span>
+          <span class="mobile-menu-btn__line" aria-hidden="true"></span>
+          <span class="mobile-menu-btn__line" aria-hidden="true"></span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- Menu mobile -->
+  <div
+    class="mobile-menu"
+    id="mobile-menu"
+    role="dialog"
+    aria-label="Menu de navegação"
+    aria-modal="true"
+    hidden
+  >
+    <div class="mobile-menu__inner">
+      <p class="mobile-menu__section-title">Navegação</p>
+      <a href="/" class="mobile-menu__link">🏠 Página Inicial</a>
+      <a href="/financiamento/" class="mobile-menu__link">🏦 Calculadora de Financiamento</a>
+      <a href="/consorcio/" class="mobile-menu__link">🤝 Calculadora de Consórcio</a>
+      <a href="/juros-compostos/" class="mobile-menu__link">📈 Juros Compostos</a>
+      <a href="/amortizacao/" class="mobile-menu__link">📊 Tabela de Amortização</a>
+      <a href="/blog/" class="mobile-menu__link">📝 Blog</a>
+    </div>
+  </div>
+
+  <!-- =====================================================
+       CONTEÚDO PRINCIPAL
+       ===================================================== -->
+  <main id="main-content">
+    <div class="error-container" role="main">
+
+      <!-- Código de erro -->
+      <p class="error-code" aria-label="Erro 404">404</p>
+
+      <!-- Ícone -->
+      <div class="error-icon" aria-hidden="true">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          <line x1="11" y1="8" x2="11" y2="11"></line>
+          <line x1="11" y1="14" x2="11.01" y2="14"></line>
+        </svg>
+      </div>
+
+      <!-- Título e descrição -->
+      <h1 class="error-title">Página não encontrada</h1>
+
+      <p class="error-desc">
+        O endereço que você acessou não existe ou foi removido.
+        Verifique se o link está correto ou use uma das opções abaixo.
+      </p>
+
+      <!-- Ações principais -->
+      <div class="error-actions">
+        <a href="/" class="btn btn--primary btn--lg">
+          <svg class="btn__icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+          Ir para o início
+        </a>
+        <button
+          class="btn btn--ghost btn--lg"
+          onclick="window.history.back()"
+          aria-label="Voltar para a página anterior"
+        >
+          ← Voltar
+        </button>
+      </div>
+
+      <!-- Divisor -->
+      <div class="error-divider" aria-hidden="true"></div>
+
+      <!-- Sugestões de páginas úteis -->
+      <p class="error-suggestions__title">Ou acesse uma calculadora</p>
+
+      <nav class="error-suggestions__grid" aria-label="Calculadoras disponíveis">
+
+        <a href="/financiamento/" class="error-suggestion-link" aria-label="Calculadora de Financiamento">
+          <span class="error-suggestion-link__icon" aria-hidden="true">🏠</span>
+          <span>Financiamento</span>
+        </a>
+
+        <a href="/consorcio/" class="error-suggestion-link" aria-label="Calculadora de Consórcio">
+          <span class="error-suggestion-link__icon" aria-hidden="true">🤝</span>
+          <span>Consórcio</span>
+        </a>
+
+        <a href="/juros-compostos/" class="error-suggestion-link" aria-label="Calculadora de Juros Compostos">
+          <span class="error-suggestion-link__icon" aria-hidden="true">📈</span>
+          <span>Juros Compostos</span>
+        </a>
+
+        <a href="/amortizacao/" class="error-suggestion-link" aria-label="Tabela de Amortização">
+          <span class="error-suggestion-link__icon" aria-hidden="true">📊</span>
+          <span>Amortização</span>
+        </a>
+
+        <a href="/cet/" class="error-suggestion-link" aria-label="Calculadora de CET">
+          <span class="error-suggestion-link__icon" aria-hidden="true">💡</span>
+          <span>CET</span>
+        </a>
+
+        <a href="/blog/" class="error-suggestion-link" aria-label="Blog do FinCalc">
+          <span class="error-suggestion-link__icon" aria-hidden="true">📝</span>
+          <span>Blog</span>
+        </a>
+
+      </nav>
+
+      <!-- Contador regressivo -->
+      <p class="error-redirect" aria-live="polite" id="redirect-msg">
+        Redirecionando para o início em
+        <span class="error-redirect__count" id="countdown">10</span>
+        segundos…
+        <button
+          class="btn btn--ghost btn--sm"
+          onclick="cancelRedirect()"
+          aria-label="Cancelar redirecionamento automático"
+          id="cancel-btn"
+          style="margin-left: var(--space-2); height: auto; padding: var(--space-1) var(--space-2);"
+        >
+          Cancelar
+        </button>
+      </p>
+
+    </div>
+  </main>
+
+  <!-- =====================================================
+       FOOTER SIMPLIFICADO
+       ===================================================== -->
+  <footer class="site-footer" role="contentinfo" style="padding-top: var(--space-8); padding-bottom: var(--space-6);">
+    <div class="container">
+      <div class="footer-bottom" style="border-top: none; padding-top: 0;">
+        <p class="footer-bottom__copy">
+          © <span id="footer-year"></span> FinCalc. Todos os direitos reservados.
+        </p>
+        <p class="footer-bottom__disclaimer">
+          As simulações são meramente ilustrativas e não constituem proposta de crédito.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- =====================================================
+       JAVASCRIPT
+       ===================================================== -->
+  <script>
+    (function () {
+      'use strict';
+
+      // ── Ano no footer ──────────────────────────────────
+      var yearEl = document.getElementById('footer-year');
+      if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+      // ── Header: sombra ao rolar ────────────────────────
+      var header = document.getElementById('site-header');
+      if (header) {
+        window.addEventListener('scroll', function () {
+          if (window.scrollY > 8) {
+            header.classList.add('is-scrolled');
+          } else {
+            header.classList.remove('is-scrolled');
+          }
+        }, { passive: true });
+      }
+
+      // ── Menu mobile ────────────────────────────────────
+      var menuBtn    = document.getElementById('mobile-menu-btn');
+      var mobileMenu = document.getElementById('mobile-menu');
+
+      if (menuBtn && mobileMenu) {
+        var menuOpen = false;
+
+        var openMenu = function () {
+          menuOpen = true;
+          menuBtn.classList.add('is-open');
+          menuBtn.setAttribute('aria-expanded', 'true');
+          mobileMenu.classList.add('is-open');
+          mobileMenu.removeAttribute('hidden');
+          document.body.style.overflow = 'hidden';
+        };
+
+        var closeMenu = function () {
+          menuOpen = false;
+          menuBtn.classList.remove('is-open');
+          menuBtn.setAttribute('aria-expanded', 'false');
+          mobileMenu.classList.remove('is-open');
+          document.body.style.overflow = '';
+          setTimeout(function () {
+            if (!menuOpen) mobileMenu.setAttribute('hidden', '');
+          }, 300);
+        };
+
+        menuBtn.addEventListener('click', function () {
+          if (menuOpen) { closeMenu(); } else { openMenu(); }
+        });
+
+        mobileMenu.querySelectorAll('a').forEach(function (link) {
+          link.addEventListener('click', closeMenu);
+        });
+
+        document.addEventListener('keydown', function (e) {
+          if (e.key === 'Escape' && menuOpen) closeMenu();
+        });
+      }
+
+      // ── Contador regressivo de redirecionamento ────────
+      var countEl    = document.getElementById('countdown');
+      var redirectMsg = document.getElementById('redirect-msg');
+      var cancelled  = false;
+      var seconds    = 10;
+      var timer      = null;
+
+      // Expõe cancelRedirect no escopo global para o onclick inline
+      window.cancelRedirect = function () {
+        cancelled = true;
+        if (timer) clearInterval(timer);
+        if (redirectMsg) {
+          redirectMsg.textContent = 'Redirecionamento cancelado.';
+        }
+      };
+
+      if (countEl) {
+        timer = setInterval(function () {
+          if (cancelled) return;
+          seconds -= 1;
+          countEl.textContent = seconds;
+          if (seconds <= 0) {
+            clearInterval(timer);
+            if (!cancelled) {
+              window.location.href = '/';
+            }
+          }
+        }, 1000);
+      }
+
+    }());
+  </script>
+
+</body>
+</html>
