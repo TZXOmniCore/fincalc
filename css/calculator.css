@@ -1,0 +1,1009 @@
+/**
+ * @file calculator.css
+ * @description Estilos específicos das páginas de calculadora do FinCalc.
+ *              Complementa components.css com estilos exclusivos da interface
+ *              de cálculo: painel de formulário, cards de resultado, tabela
+ *              de amortização, gráfico e elementos interativos específicos.
+ *
+ * ORDEM DE IMPORTAÇÃO:
+ *   1. tokens.css      ✓
+ *   2. reset.css       ✓
+ *   3. base.css        ✓
+ *   4. layout.css      ✓
+ *   5. components.css  ✓
+ *   6. calculator.css  ← este arquivo
+ */
+
+/* ============================================================
+   PAINEL DO FORMULÁRIO DE CÁLCULO
+   ============================================================ */
+
+/**
+ * .calc-panel — card container do formulário de entrada.
+ * Fica sticky no desktop (via layout.css .calc-layout__form).
+ */
+.calc-panel {
+  background-color: var(--color-bg-card);
+  border: var(--border-width-thin) solid var(--color-border);
+  border-radius: var(--card-border-radius);
+  box-shadow: var(--shadow-card);
+  overflow: hidden;
+}
+
+/* Cabeçalho do painel */
+.calc-panel__header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-5) var(--space-6);
+  border-bottom: var(--border-width-thin) solid var(--color-border);
+  background: linear-gradient(
+    135deg,
+    var(--color-bg-card) 0%,
+    var(--color-bg-card-hover) 100%
+  );
+}
+
+.calc-panel__icon {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-md);
+  background-color: var(--color-accent-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-accent);
+  flex-shrink: 0;
+}
+
+.calc-panel__title {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+  line-height: var(--line-height-tight);
+}
+
+.calc-panel__subtitle {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+  margin-top: 2px;
+}
+
+/* Corpo do painel — formulário */
+.calc-panel__body {
+  padding: var(--space-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+/* Rodapé do painel — botão calcular */
+.calc-panel__footer {
+  padding: var(--space-4) var(--space-6) var(--space-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+/* ============================================================
+   TOGGLE DE SISTEMA (PRICE / SAC)
+   ============================================================ */
+
+.system-toggle {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.system-toggle__label {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-secondary);
+}
+
+/* ============================================================
+   INPUT DE VALOR COM MOEDA
+   ============================================================ */
+
+.currency-input-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+/* Wrapper do input com símbolo R$ */
+.currency-input-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.currency-input-wrap__symbol {
+  position: absolute;
+  left: var(--space-4);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-muted);
+  pointer-events: none;
+  user-select: none;
+  z-index: 1;
+}
+
+.currency-input-wrap .form-input {
+  padding-left: calc(var(--space-4) + 24px + var(--space-1));
+  font-family: var(--font-mono);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: 0.02em;
+}
+
+/* Input de taxa com sufixo % */
+.percent-input-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.percent-input-wrap .form-input {
+  padding-right: calc(var(--space-4) + 20px);
+  font-family: var(--font-mono);
+  font-weight: var(--font-weight-semibold);
+}
+
+.percent-input-wrap__symbol {
+  position: absolute;
+  right: var(--space-4);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-muted);
+  pointer-events: none;
+  user-select: none;
+}
+
+/* ============================================================
+   CAMPO DE PRAZO COM SLIDER + INPUT
+   ============================================================ */
+
+.prazo-field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.prazo-field__inputs {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: var(--space-3);
+  align-items: start;
+}
+
+/* Input numérico do prazo */
+.prazo-field__input-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+/* Seletor de unidade (meses / anos) */
+.prazo-field__unit-select {
+  height: var(--input-height);
+  width: 96px;
+  flex-shrink: 0;
+}
+
+/* Linha de conversão de prazo */
+.prazo-field__conversion {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+  padding: 0 var(--space-1);
+}
+
+.prazo-field__conversion strong {
+  color: var(--color-accent);
+  font-weight: var(--font-weight-semibold);
+}
+
+/* ============================================================
+   SEÇÃO OPCIONAL (FGTS, SEGUROS, RENDA)
+   ============================================================ */
+
+.optional-section {
+  border-top: var(--border-width-thin) solid var(--color-border);
+  padding-top: var(--space-4);
+}
+
+.optional-section__toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  cursor: pointer;
+  padding: var(--space-1) 0;
+  background: transparent;
+  border: none;
+  width: 100%;
+  text-align: left;
+}
+
+.optional-section__label {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-secondary);
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.optional-section__label-badge {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+  font-weight: var(--font-weight-regular);
+}
+
+.optional-section__chevron {
+  width: 16px;
+  height: 16px;
+  color: var(--color-text-muted);
+  flex-shrink: 0;
+  transition: transform var(--transition-fast);
+}
+
+.optional-section.is-open .optional-section__chevron {
+  transform: rotate(180deg);
+}
+
+.optional-section__body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height var(--transition-slow) var(--ease-out);
+}
+
+.optional-section.is-open .optional-section__body {
+  max-height: 400px;
+}
+
+.optional-section__fields {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  padding-top: var(--space-4);
+}
+
+/* ============================================================
+   ÁREA DE RESULTADO — ESTADO VAZIO
+   ============================================================ */
+
+.result-area {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+/* Estado inicial: instrução para preencher o formulário */
+.result-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-4);
+  padding: var(--space-16) var(--space-6);
+  background-color: var(--color-bg-card);
+  border: var(--border-width-thin) dashed var(--color-border);
+  border-radius: var(--card-border-radius);
+  text-align: center;
+  min-height: 280px;
+}
+
+.result-placeholder__icon {
+  width: 56px;
+  height: 56px;
+  background-color: var(--color-accent-subtle);
+  border-radius: var(--radius-xl);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-accent);
+}
+
+.result-placeholder__title {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-secondary);
+}
+
+.result-placeholder__desc {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+  max-width: 240px;
+  line-height: var(--line-height-relaxed);
+}
+
+/* ============================================================
+   CARD DE RESULTADO PRINCIPAL
+   ============================================================ */
+
+.main-result-card {
+  background: linear-gradient(
+    135deg,
+    var(--color-bg-card) 0%,
+    rgba(26, 34, 54, 0.8) 100%
+  );
+  border: var(--border-width-thin) solid var(--color-border);
+  border-top: 3px solid var(--color-success);
+  border-radius: var(--card-border-radius);
+  box-shadow: var(--shadow-card), var(--shadow-glow-success);
+  padding: var(--space-6);
+  animation: fadeInUp var(--duration-base) var(--ease-out) both;
+}
+
+/* Cabeçalho do resultado */
+.main-result-card__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-4);
+  margin-bottom: var(--space-5);
+}
+
+.main-result-card__system {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.main-result-card__system-name {
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing-wider);
+}
+
+/* Valor da parcela — destaque principal */
+.main-result-card__parcela-label {
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing-wider);
+  margin-bottom: var(--space-1);
+}
+
+.main-result-card__parcela-value {
+  font-family: var(--font-mono);
+  font-size: clamp(var(--font-size-2xl), 5vw, var(--font-size-3xl));
+  font-weight: var(--font-weight-bold);
+  color: var(--color-success);
+  line-height: 1;
+  letter-spacing: var(--letter-spacing-tight);
+}
+
+/* Nota sobre primeira/última parcela no SAC */
+.main-result-card__parcela-note {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+  margin-top: var(--space-1);
+}
+
+/* Separador */
+.main-result-card__divider {
+  height: 1px;
+  background: var(--color-border);
+  margin: var(--space-5) 0;
+}
+
+/* Grid de métricas secundárias */
+.main-result-card__metrics {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-4);
+}
+
+@media (min-width: 480px) {
+  .main-result-card__metrics {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.metric-item {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.metric-item__label {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+  line-height: 1.3;
+}
+
+.metric-item__value {
+  font-family: var(--font-mono);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+  line-height: 1;
+}
+
+.metric-item__value--danger  { color: var(--color-danger);  }
+.metric-item__value--warning { color: var(--color-warning); }
+.metric-item__value--success { color: var(--color-success); }
+.metric-item__value--muted   { color: var(--color-text-muted); }
+
+/* ============================================================
+   CARD DE COMPARATIVO PRICE × SAC
+   ============================================================ */
+
+.compare-result-card {
+  background-color: var(--color-bg-card);
+  border: var(--border-width-thin) solid var(--color-border);
+  border-radius: var(--card-border-radius);
+  box-shadow: var(--shadow-card);
+  overflow: hidden;
+  animation: fadeInUp var(--duration-base) var(--ease-out) 100ms both;
+}
+
+.compare-result-card__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-4) var(--space-5);
+  border-bottom: var(--border-width-thin) solid var(--color-border);
+  background-color: var(--color-bg-secondary);
+}
+
+.compare-result-card__title {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+}
+
+/* Tabela de comparativo */
+.compare-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.compare-table__head th {
+  padding: var(--space-3) var(--space-4);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing-wider);
+  text-align: right;
+  white-space: nowrap;
+  border-bottom: var(--border-width-thin) solid var(--color-border);
+}
+
+.compare-table__head th:first-child {
+  text-align: left;
+}
+
+.compare-table tbody tr {
+  border-bottom: var(--border-width-thin) solid var(--color-border);
+  transition: background-color var(--transition-fast);
+}
+
+.compare-table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.compare-table tbody tr:hover {
+  background-color: var(--color-bg-card-hover);
+}
+
+.compare-table td {
+  padding: var(--space-3) var(--space-4);
+  font-size: var(--font-size-sm);
+  text-align: right;
+  vertical-align: middle;
+}
+
+.compare-table td:first-child {
+  text-align: left;
+  color: var(--color-text-secondary);
+  font-weight: var(--font-weight-medium);
+}
+
+.compare-table__value {
+  font-family: var(--font-mono);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-primary);
+}
+
+.compare-table__value--best {
+  color: var(--color-success);
+  font-weight: var(--font-weight-bold);
+}
+
+.compare-table__value--worst {
+  color: var(--color-danger);
+}
+
+/* Rodapé do comparativo — economia total */
+.compare-result-card__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  padding: var(--space-4) var(--space-5);
+  background-color: var(--color-success-subtle);
+  border-top: var(--border-width-thin) solid var(--color-border);
+}
+
+.compare-result-card__economy-label {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+}
+
+.compare-result-card__economy-value {
+  font-family: var(--font-mono);
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-success);
+}
+
+/* ============================================================
+   BARRA DE COMPROMETIMENTO DE RENDA
+   ============================================================ */
+
+.renda-card {
+  background-color: var(--color-bg-card);
+  border: var(--border-width-thin) solid var(--color-border);
+  border-radius: var(--card-border-radius);
+  padding: var(--space-5);
+  animation: fadeInUp var(--duration-base) var(--ease-out) 200ms both;
+}
+
+.renda-card__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-4);
+}
+
+.renda-card__title {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+}
+
+.renda-card__percent {
+  font-family: var(--font-mono);
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  line-height: 1;
+}
+
+.renda-card__percent--seguro  { color: var(--color-success); }
+.renda-card__percent--atencao { color: var(--color-warning); }
+.renda-card__percent--risco   { color: var(--color-danger);  }
+
+.renda-card__bar-track {
+  height: 8px;
+  background-color: var(--color-bg-surface);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+  margin-bottom: var(--space-3);
+}
+
+.renda-card__bar-fill {
+  height: 100%;
+  border-radius: var(--radius-full);
+  transition: width var(--transition-slow) var(--ease-out);
+  max-width: 100%;
+}
+
+.renda-card__bar-fill--seguro  { background-color: var(--color-success); }
+.renda-card__bar-fill--atencao { background-color: var(--color-warning); }
+.renda-card__bar-fill--risco   { background-color: var(--color-danger);  }
+
+.renda-card__legend {
+  display: flex;
+  justify-content: space-between;
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+}
+
+.renda-card__message {
+  margin-top: var(--space-3);
+  font-size: var(--font-size-xs);
+  line-height: var(--line-height-relaxed);
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-sm);
+}
+
+.renda-card__message--seguro {
+  background-color: var(--color-success-subtle);
+  color: var(--color-success);
+}
+
+.renda-card__message--atencao {
+  background-color: var(--color-warning-subtle);
+  color: var(--color-warning);
+}
+
+.renda-card__message--risco {
+  background-color: var(--color-danger-subtle);
+  color: var(--color-danger);
+}
+
+/* ============================================================
+   TABELA DE AMORTIZAÇÃO
+   ============================================================ */
+
+.amort-card {
+  background-color: var(--color-bg-card);
+  border: var(--border-width-thin) solid var(--color-border);
+  border-radius: var(--card-border-radius);
+  box-shadow: var(--shadow-card);
+  overflow: hidden;
+  animation: fadeInUp var(--duration-base) var(--ease-out) 300ms both;
+}
+
+.amort-card__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  padding: var(--space-4) var(--space-5);
+  border-bottom: var(--border-width-thin) solid var(--color-border);
+  background-color: var(--color-bg-secondary);
+}
+
+.amort-card__title {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+}
+
+.amort-card__controls {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+/* Wrapper com scroll horizontal */
+.amort-card__table-wrap {
+  overflow-x: auto;
+  max-height: 400px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+/* Tabela de amortização */
+.amort-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--font-size-sm);
+  min-width: 560px; /* Garante scroll horizontal em mobile */
+}
+
+/* Cabeçalho sticky */
+.amort-table thead {
+  position: sticky;
+  top: 0;
+  z-index: var(--z-raised);
+  background-color: var(--color-bg-surface);
+}
+
+.amort-table thead th {
+  padding: var(--space-3) var(--space-4);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing-wider);
+  text-align: right;
+  white-space: nowrap;
+  border-bottom: var(--border-width-thick) solid var(--color-border);
+}
+
+.amort-table thead th:first-child {
+  text-align: center;
+  width: 56px;
+}
+
+/* Linhas do corpo */
+.amort-table tbody tr {
+  border-bottom: var(--border-width-thin) solid var(--color-border);
+  transition: background-color var(--transition-fast);
+}
+
+.amort-table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.amort-table tbody tr:hover {
+  background-color: var(--color-bg-card-hover);
+}
+
+/* Linha do ano (agrupamento visual) */
+.amort-table tbody tr.is-year-mark {
+  border-top: var(--border-width-thin) solid var(--color-border-light);
+}
+
+.amort-table td {
+  padding: var(--space-2) var(--space-4);
+  text-align: right;
+  vertical-align: middle;
+  color: var(--color-text-secondary);
+  white-space: nowrap;
+}
+
+/* Número da parcela */
+.amort-table td:first-child {
+  text-align: center;
+  color: var(--color-text-muted);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+}
+
+/* Coluna de valor monetário */
+.amort-table__val {
+  font-family: var(--font-mono);
+  color: var(--color-text-primary);
+  font-weight: var(--font-weight-medium);
+}
+
+/* Coluna de parcela — destaque */
+.amort-table__parcela {
+  font-family: var(--font-mono);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+}
+
+/* Coluna de juros — subtom vermelho */
+.amort-table__juros {
+  font-family: var(--font-mono);
+  color: var(--color-danger);
+}
+
+/* Coluna de amortização — subtom verde */
+.amort-table__amort {
+  font-family: var(--font-mono);
+  color: var(--color-success);
+}
+
+/* Saldo devedor */
+.amort-table__saldo {
+  font-family: var(--font-mono);
+  color: var(--color-text-secondary);
+}
+
+/* Rodapé da tabela — totais */
+.amort-table tfoot tr {
+  background-color: var(--color-bg-surface);
+  border-top: var(--border-width-thick) solid var(--color-border);
+}
+
+.amort-table tfoot td {
+  padding: var(--space-3) var(--space-4);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+}
+
+/* Paginação da tabela */
+.amort-card__pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-3);
+  padding: var(--space-4) var(--space-5);
+  border-top: var(--border-width-thin) solid var(--color-border);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+}
+
+.amort-card__page-info {
+  font-family: var(--font-mono);
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+}
+
+/* ============================================================
+   ÁREA DO GRÁFICO
+   ============================================================ */
+
+.chart-card {
+  background-color: var(--color-bg-card);
+  border: var(--border-width-thin) solid var(--color-border);
+  border-radius: var(--card-border-radius);
+  box-shadow: var(--shadow-card);
+  overflow: hidden;
+  animation: fadeInUp var(--duration-base) var(--ease-out) 200ms both;
+}
+
+.chart-card__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  padding: var(--space-4) var(--space-5);
+  border-bottom: var(--border-width-thin) solid var(--color-border);
+}
+
+.chart-card__title {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+}
+
+.chart-card__body {
+  padding: var(--space-4) var(--space-5);
+  position: relative;
+}
+
+/* Container canvas do Chart.js */
+.chart-canvas-wrap {
+  position: relative;
+  width: 100%;
+  height: 240px;
+}
+
+@media (min-width: 768px) {
+  .chart-canvas-wrap {
+    height: 280px;
+  }
+}
+
+/* Legenda do gráfico */
+.chart-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  justify-content: center;
+  margin-top: var(--space-4);
+}
+
+.chart-legend__item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--font-size-xs);
+  color: var(--color-text-secondary);
+}
+
+.chart-legend__dot {
+  width: 10px;
+  height: 10px;
+  border-radius: var(--radius-full);
+  flex-shrink: 0;
+}
+
+/* Loading do gráfico (antes do Chart.js carregar) */
+.chart-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 240px;
+  gap: var(--space-3);
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+}
+
+/* ============================================================
+   AÇÕES PÓS-RESULTADO
+   ============================================================ */
+
+.result-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+}
+
+.result-actions__label {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+  flex-shrink: 0;
+}
+
+/* ============================================================
+   CALCULADORAS RELACIONADAS (interlinking)
+   ============================================================ */
+
+.related-calcs {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.related-calcs__title {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+}
+
+.related-calcs__list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-3);
+}
+
+.related-calc-link {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  background-color: var(--color-bg-card);
+  border: var(--border-width-thin) solid var(--color-border);
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  font-weight: var(--font-weight-medium);
+  transition:
+    border-color     var(--transition-fast),
+    color            var(--transition-fast),
+    background-color var(--transition-fast);
+}
+
+.related-calc-link:hover {
+  border-color: var(--color-border-focus);
+  color: var(--color-text-primary);
+  background-color: var(--color-bg-card-hover);
+  text-decoration: none;
+}
+
+.related-calc-link__icon {
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+/* ============================================================
+   RESPONSIVIDADE
+   ============================================================ */
+
+@media (max-width: 639px) {
+
+  .calc-panel__body {
+    padding: var(--space-4);
+    gap: var(--space-4);
+  }
+
+  .calc-panel__footer {
+    padding: var(--space-3) var(--space-4) var(--space-4);
+  }
+
+  .main-result-card {
+    padding: var(--space-4);
+  }
+
+  .main-result-card__metrics {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-3);
+  }
+
+  .main-result-card__parcela-value {
+    font-size: var(--font-size-2xl);
+  }
+
+  .compare-result-card__footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-1);
+  }
+
+  .related-calcs__list {
+    grid-template-columns: 1fr;
+  }
+
+  .amort-card__header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+}
+
+@media (min-width: 1024px) {
+
+  /* No desktop, o painel fica fixo e o resultado rola */
+  .main-result-card__metrics {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+}
