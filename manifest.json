@@ -1,86 +1,76 @@
 {
   "$schema": "https://json.schemastore.org/web-manifest-combined.json",
-
   "name": "FinCalc — Calculadoras Financeiras",
   "short_name": "FinCalc",
   "description": "Calculadoras financeiras gratuitas para financiamento, consórcio, juros compostos e amortização. Sem cadastro, sem anúncios intrusivos.",
-
-  "start_url": "/",
-  "scope": "/",
-  "id": "/",
-
+  "start_url": "/fincalc/",
+  "scope": "/fincalc/",
+  "id": "/fincalc/",
   "display": "standalone",
   "orientation": "portrait-primary",
-
   "background_color": "#0a0e1a",
   "theme_color": "#0a0e1a",
-
   "lang": "pt-BR",
   "dir": "ltr",
-
   "categories": ["finance", "utilities", "productivity"],
-
   "icons": [
     {
-      "src": "/assets/icons/icon-192.png",
+      "src": "assets/icons/icon-192.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "/assets/icons/icon-512.png",
+      "src": "assets/icons/icon-512.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "/assets/icons/icon-512-maskable.png",
+      "src": "assets/icons/icon-512-maskable.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "maskable"
     }
   ],
-
   "screenshots": [
     {
-      "src": "/assets/images/screenshot-mobile.jpg",
+      "src": "assets/images/screenshot-mobile.jpg",
       "sizes": "390x844",
       "type": "image/jpeg",
       "form_factor": "narrow",
       "label": "Calculadora de Financiamento no celular"
     },
     {
-      "src": "/assets/images/screenshot-desktop.jpg",
+      "src": "assets/images/screenshot-desktop.jpg",
       "sizes": "1280x800",
       "type": "image/jpeg",
       "form_factor": "wide",
       "label": "Calculadora de Financiamento no desktop"
     }
   ],
-
   "shortcuts": [
     {
       "name": "Simulador de Financiamento",
       "short_name": "Financiamento",
       "description": "Simule financiamentos pelos sistemas Price e SAC",
-      "url": "/financiamento/",
-      "icons": [{ "src": "/assets/icons/icon-192.png", "sizes": "192x192" }]
+      "url": "/fincalc/financiamento/",
+      "icons": [{ "src": "assets/icons/icon-192.png", "sizes": "192x192" }]
     },
     {
       "name": "Simulador de Consórcio",
       "short_name": "Consórcio",
       "description": "Calcule parcelas e taxa de administração do consórcio",
-      "url": "/consorcio/",
-      "icons": [{ "src": "/assets/icons/icon-192.png", "sizes": "192x192" }]
+      "url": "/fincalc/consorcio/",
+      "icons": [{ "src": "assets/icons/icon-192.png", "sizes": "192x192" }]
     },
     {
       "name": "Juros Compostos",
       "short_name": "Juros",
       "description": "Calcule montante e rendimento com juros compostos",
-      "url": "/juros-compostos/",
-      "icons": [{ "src": "/assets/icons/icon-192.png", "sizes": "192x192" }]
+      "url": "/fincalc/juros-compostos/",
+      "icons": [{ "src": "assets/icons/icon-192.png", "sizes": "192x192" }]
     }
   ],
-
   "prefer_related_applications": false
 }
